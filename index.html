@@ -234,7 +234,8 @@ body.mm-lock{overflow:hidden;}
 .food-photo-ph{display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.55;}
 .food-photo-ph svg{opacity:.7;}
 .food-photo-ph span{font-family:'Nunito Sans',monospace;font-size:10.5px;font-weight:700;letter-spacing:.04em;}
-.food-icon{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#fff;box-shadow:0 6px 18px rgba(26,35,64,.12);position:absolute;left:22px;bottom:-26px;z-index:2;}
+.food-icon{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#fff;box-shadow:0 6px 18px rgba(26,35,64,.12);position:absolute;left:22px;bottom:-26px;z-index:2;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform:translateZ(0.01px);transition:opacity .3s ease;}
+.food-card:hover .food-icon,.food-card.is-flipped .food-icon{opacity:0;}
 .food-text-area{padding:38px 24px 24px;flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:14px;}
 .food-title{font-family:'Nunito',sans-serif;font-size:17.5px;font-weight:900;color:var(--navy);line-height:1.25;}
 .food-back{transform:rotateY(180deg);background:var(--navy);color:#fff;justify-content:center;gap:14px;padding:30px 28px;}
@@ -287,10 +288,10 @@ body.mm-lock{overflow:hidden;}
 .contact-box{margin-top:52px;background:var(--blue-lt);border-radius:24px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
 .contact-box h4{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:6px;}
 .contact-box p{font-size:14px;color:var(--gray);font-weight:500;}
-.contact-btns{display:flex;gap:10px;flex-wrap:nowrap;}
-.btn-email{display:flex;align-items:center;gap:7px;background:#fff;border:1.5px solid #D0E8F8;color:var(--navy);font-size:14px;font-weight:800;padding:12px 20px;border-radius:30px;text-decoration:none;font-family:'Nunito',sans-serif;white-space:nowrap;}
+.contact-btns{display:flex;gap:10px;flex-wrap:wrap;max-width:100%;min-width:0;}
+.btn-email{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1.5px solid #D0E8F8;color:var(--navy);font-size:14px;font-weight:800;padding:12px 20px;border-radius:30px;text-decoration:none;font-family:'Nunito',sans-serif;white-space:nowrap;max-width:100%;min-width:0;overflow:hidden;text-overflow:ellipsis;}
 .contact-btns .btn-green{white-space:nowrap;}
-@media(max-width:540px){.contact-btns{gap:8px;}.contact-btns .btn-green,.contact-btns .btn-email{padding:10px 14px;font-size:12.5px;}}
+@media(max-width:540px){.contact-box{width:100%;}.contact-btns{gap:8px;width:100%;}.contact-btns .btn-green,.contact-btns .btn-email{padding:10px 14px;font-size:12px;}.contact-btns .btn-green,.contact-btns .btn-email{flex:1 1 100%;justify-content:center;}}
 
 .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
 .faq-item{background:#fff;border-radius:var(--rs);border:1px solid #E8F0FF;overflow:hidden;}
