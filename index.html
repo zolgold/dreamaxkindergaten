@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="ru" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Dreamax Kindergarten — Международный детский сад, Пхукет</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue:#4BAEE8;--blue-dk:#2A8DC9;--blue-lt:#EDF6FD;--blue-mid:#C8E4F5;
+  --yellow:#F9C855;--yellow-lt:#FEF9EC;--yellow-dk:#C89010;
+  --navy:#1A2340;--navy2:#2C3A5C;--gray:#5A6A85;--gray-lt:#8A9DC0;
+  --green:#25D366;--bg:#F7FAFF;--r:20px;--rs:12px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito Sans',sans-serif;color:var(--navy);background:#fff;overflow-x:hidden;}
+h1,h2,h3,h4,.logo-name{font-family:'Nunito',sans-serif;}
+
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:13px 48px;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #EEF4FB;gap:16px;}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none;}
+.nav-logo-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;background:#fff;}
+.nav-logo-icon img{width:100%;height:100%;object-fit:cover;transform:scale(1.18);display:block;}
+.logo-name{font-size:15px;font-weight:900;color:var(--navy);white-space:nowrap;line-height:1.1;letter-spacing:-.2px;}
+.logo-sub{font-size:10px;font-weight:600;color:var(--gray-lt);letter-spacing:.04em;}
+.nav-links{display:flex;gap:24px;flex:1;justify-content:center;}
+.nav-links a{font-size:13px;font-weight:700;color:var(--gray);text-decoration:none;transition:color .2s;white-space:nowrap;}
+.nav-links a:hover{color:var(--blue);}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.btn-wa{display:flex;align-items:center;gap:6px;background:var(--green);color:#fff;font-size:12.5px;font-weight:800;padding:8px 16px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;white-space:nowrap;text-decoration:none;transition:background .2s;}
+.btn-wa:hover{background:#1fba59;}
+.btn-primary{background:var(--blue);color:#fff;font-size:13px;font-weight:800;padding:8px 18px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;white-space:nowrap;transition:background .2s;}
+.btn-primary:hover{background:var(--blue-dk);}
+
+/* LANGUAGE SWITCHER — desktop */
+.lang-switch{display:flex;align-items:center;background:#F0F4FF;border-radius:20px;padding:3px;gap:2px;flex-shrink:0;}
+.lang-btn{font-size:12px;font-weight:800;padding:5px 11px;border-radius:16px;border:none;cursor:pointer;background:none;color:var(--gray-lt);font-family:'Nunito',sans-serif;transition:.2s;letter-spacing:.03em;}
+.lang-btn.active{background:#fff;color:var(--blue);box-shadow:0 1px 4px rgba(0,0,0,.1);}
+.lang-btn:hover:not(.active){color:var(--navy);}
+
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;width:32px;height:32px;justify-content:center;align-items:center;position:relative;z-index:101;}
+.burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .2s ease;transform-origin:center;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.nav-mobile-right{display:none;align-items:center;gap:10px;flex-shrink:0;}
+.nav-mob-lang{padding:2px;}
+.nav-mob-lang .mm-lang-btn{font-size:11px;padding:4px 10px;}
+
+.mobile-backdrop{position:fixed;inset:0;background:rgba(26,35,64,.45);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:98;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+.mobile-backdrop.open{opacity:1;pointer-events:auto;}
+
+.mobile-menu{position:fixed;top:0;right:0;bottom:0;width:min(88vw,380px);z-index:99;background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:-20px 0 50px rgba(26,35,64,.18);}
+.mobile-menu.open{transform:translateX(0);}
+
+.mm-header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid #EEF4FB;flex-shrink:0;}
+.mm-header-brand{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--gray-lt);text-transform:uppercase;}
+.mm-header-logo{display:flex;align-items:center;gap:10px;}
+.mm-header-logo-icon{width:38px;height:38px;border-radius:10px;background:#fff;overflow:hidden;flex-shrink:0;box-shadow:0 1px 0 rgba(0,0,0,.04);}
+.mm-header-logo-icon img{width:100%;height:100%;object-fit:cover;transform:scale(1.18);display:block;}
+.mm-header-logo-name{font-family:'Nunito',sans-serif;font-size:14px;font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.2px;}
+.mm-header-logo-sub{font-family:'Nunito Sans',sans-serif;font-size:10px;font-weight:700;color:var(--gray-lt);letter-spacing:.04em;margin-top:1px;}
+.mm-lang-switch{display:flex;align-items:center;background:#F0F4FF;border-radius:20px;padding:3px;gap:2px;}
+.mm-lang-btn{font-size:12px;font-weight:800;padding:5px 12px;border-radius:16px;border:none;cursor:pointer;background:none;color:var(--gray-lt);font-family:'Nunito',sans-serif;transition:.2s;}
+.mm-lang-btn.active{background:#fff;color:var(--blue);box-shadow:0 1px 4px rgba(0,0,0,.1);}
+.mm-close{width:38px;height:38px;border-radius:50%;background:#F0F4FF;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--navy);transition:background .2s;}
+.mm-close:hover{background:#E0EAF8;}
+
+.mm-scroll{flex:1;overflow-y:auto;padding:8px 22px 18px;-webkit-overflow-scrolling:touch;}
+.mm-group{padding:14px 0 10px;border-bottom:1px solid #F0F4FF;}
+.mm-group:last-child{border-bottom:none;}
+.mm-group-label{font-size:10.5px;font-weight:800;letter-spacing:.14em;color:var(--gray-lt);text-transform:uppercase;margin-bottom:6px;}
+.mm-link{display:flex;align-items:center;justify-content:space-between;font-family:'Nunito',sans-serif;font-size:21px;font-weight:800;color:var(--navy);text-decoration:none;padding:10px 0;letter-spacing:-.4px;transition:color .15s,transform .2s;}
+.mm-link:active{color:var(--blue);}
+.mm-link-arrow{opacity:.25;transition:opacity .2s,transform .2s;color:var(--gray-lt);}
+.mm-link:hover{color:var(--blue);}
+.mm-link:hover .mm-link-arrow{opacity:1;color:var(--blue);transform:translateX(3px);}
+
+.mm-footer{flex-shrink:0;padding:16px 22px 20px;border-top:1px solid #EEF4FB;background:linear-gradient(180deg,#FAFBFE 0%,#F5F8FE 100%);display:flex;flex-direction:column;gap:9px;}
+.mm-footer .btn-wa,.mm-footer .btn-primary{width:100%;justify-content:center;padding:14px;border:none;font-size:14px;border-radius:14px;}
+.mm-contact{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray);font-weight:600;justify-content:center;padding:2px 0 4px;letter-spacing:.01em;}
+.mm-contact svg{flex-shrink:0;opacity:.6;}
+
+@keyframes mmFadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.mobile-menu.open .mm-group{animation:mmFadeIn .45s cubic-bezier(.2,0,.2,1) both;}
+.mobile-menu.open .mm-group:nth-child(1){animation-delay:.10s;}
+.mobile-menu.open .mm-group:nth-child(2){animation-delay:.16s;}
+.mobile-menu.open .mm-group:nth-child(3){animation-delay:.22s;}
+.mobile-menu.open .mm-footer{animation:mmFadeIn .45s cubic-bezier(.2,0,.2,1) both;animation-delay:.28s;}
+
+body.mm-lock{overflow:hidden;}
+
+/* HERO */
+.hero{min-height:calc(100vh - 62px);max-height:860px;display:grid;grid-template-columns:1fr 1fr;background:var(--blue-lt);overflow:hidden;position:relative;}
+.hero-left{padding:64px 48px 64px 14%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--blue-mid);color:var(--blue-dk);font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:24px;width:fit-content;}
+.hero-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--yellow);flex-shrink:0;}
+.hero h1{font-size:clamp(36px,3.8vw,56px);font-weight:900;line-height:1.08;color:var(--navy);margin-bottom:18px;letter-spacing:-1.5px;white-space:nowrap;}
+.hero h1 em{color:var(--blue);font-style:italic;}
+.hero-sub{font-size:15px;color:var(--gray);line-height:1.7;margin-bottom:24px;max-width:100%;font-weight:500;}
+.hero-facts{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;width:100%;}
+.hero-fact{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--navy2);}
+.hf-icon{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+.btn-hero{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-size:15px;font-weight:800;padding:15px 32px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:none;transition:background .2s,transform .15s;align-self:center;box-shadow:0 6px 20px rgba(75,174,232,.35);}
+.btn-hero:hover{background:var(--blue-dk);transform:translateY(-1px);}
+.hero-cta-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.btn-hero-video{display:none;align-items:center;justify-content:center;gap:8px;background:#fff;color:var(--navy);font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;padding:14px 24px;border-radius:30px;border:1.5px solid var(--blue-mid);cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s,transform .2s;}
+.btn-hero-video:hover{background:var(--blue-lt);border-color:var(--blue);transform:translateY(-1px);}
+.bhv-icon{width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding-left:2px;}
+.hero-right{position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:0;}
+.hero-bg-circ{position:absolute;border-radius:50%;pointer-events:none;}
+.hero-video-wrap{position:relative;z-index:3;width:52%;height:92%;flex-shrink:0;border-radius:28px 28px 0 0;overflow:hidden;box-shadow:0 0 0 5px rgba(255,255,255,.85),0 24px 64px rgba(74,174,232,.25);border:5px solid rgba(255,255,255,.85);border-bottom:none;align-self:flex-end;}
+.hero-video-inner{position:absolute;inset:0;background:var(--blue-mid);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;height:100%;}
+.hero-video-inner svg{opacity:.3;color:var(--blue-dk);}
+.hero-video-inner span{font-size:12.5px;font-weight:700;color:var(--blue-dk);opacity:.5;text-align:center;padding:0 24px;line-height:1.6;}
+.hero-video-inner iframe,.hero-video-inner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:none;}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--navy);}
+.stat{padding:26px 32px;border-right:1px solid rgba(255,255,255,.07);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Nunito',sans-serif;font-size:30px;font-weight:900;color:var(--yellow);line-height:1;}
+.stat-label{font-size:12.5px;color:var(--gray-lt);font-weight:600;margin-top:5px;line-height:1.45;}
+
+.sec{padding:80px 56px 100px;position:relative;overflow:hidden;}
+.sec-alt{background:var(--blue-lt);}
+.sec-yellow{background:var(--yellow-lt);}
+.sec-white{background:#fff;}
+.sec-bg{background:var(--bg);}
+
+/* Section wave separators — each section's bottom curves into the next color */
+.sec::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:80px;background-repeat:no-repeat;background-position:bottom center;background-size:100% 100%;pointer-events:none;z-index:1;}
+#programs::after,#food::after,#apply::after{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'><path d='M0,80 C480,0 960,0 1440,80 L1440,80 L0,80 Z' fill='%23FEF9EC'/></svg>");}
+#gallery::after,#reviews::after{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'><path d='M0,60 C360,80 720,0 1440,40 L1440,80 L0,80 Z' fill='%23EDF6FD'/></svg>");}
+#schedule::after,#pricing::after{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'><path d='M0,60 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440,80 L0,80 Z' fill='%23ffffff'/></svg>");}
+#faq::after{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'><path d='M0,60 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440,80 L0,80 Z' fill='%23ffffff'/></svg>");}
+.tag{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--blue);text-transform:uppercase;margin-bottom:8px;}
+.sh2{font-size:34px;font-weight:900;color:var(--navy);letter-spacing:-.4px;margin-bottom:12px;line-height:1.15;}
+.sh2 em{color:var(--blue);font-style:normal;}
+.ssub{font-size:15px;color:var(--gray);line-height:1.7;max-width:560px;margin-bottom:48px;}
+
+.sched-tabs{display:flex;gap:0;background:#fff;border:1.5px solid var(--blue-mid);border-radius:30px;padding:4px;width:fit-content;margin:0 auto 40px auto;}
+.sched-tab{padding:10px 26px;border-radius:26px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--gray);background:none;border:none;cursor:pointer;transition:.2s;white-space:nowrap;}
+.sched-tab.active{background:var(--blue);color:#fff;}
+.sched-panel{display:none;}
+.sched-panel.active{display:block;}
+.sched-mobile{display:block;}
+.sched-desktop{display:none;}
+.sched-desktop .vtl:first-child{padding-right:40px;}
+.sched-desktop .vtl:last-child{padding-left:40px;}
+.sched-divider{background:var(--blue-mid);}
+@media(min-width:961px){
+  .sched-mobile{display:none;}
+  .sched-desktop{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:920px;margin:0 auto;}
+  .sched-desktop .vtl{display:flex;flex-direction:column;gap:10px;padding:0;}
+  .sched-desktop .vtl::before{display:none;}
+  .sched-desktop .vtl-item{background:#fff;border:1px solid #E0EAF8;border-left:4px solid var(--blue);border-radius:14px;padding:16px 20px;margin:0;}
+  .sched-desktop .vtl-item.is-break{border-left-color:var(--yellow);background:#FEFAEC;}
+  .sched-desktop .vtl-dot{display:none;}
+  .sched-desktop .vtl-time{font-size:11.5px;margin-bottom:5px;}
+  .sched-desktop .vtl-title{font-size:14.5px;margin-bottom:3px;}
+  .sched-desktop .vtl-desc{font-size:12.5px;line-height:1.5;}
+  .sched-divider{display:none;}
+}
+
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.prog-card{border-radius:var(--r);padding:28px;transition:transform .25s;}
+.prog-card:hover{transform:translateY(-4px);}
+.prog-card.c1{background:var(--blue-lt);}
+.prog-card.c2{background:var(--yellow-lt);}
+.prog-card.c3{background:#F0EDFF;}
+.prog-ico{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:28px;}
+.prog-ico.i1{background:var(--blue-mid);}
+.prog-ico.i2{background:#FAE8A0;}
+.prog-ico.i3{background:#DDD6FF;}
+.prog-card h3{font-size:18px;font-weight:900;color:var(--navy);margin-bottom:10px;}
+.prog-card p{font-size:13.5px;color:var(--gray);line-height:1.65;margin-bottom:18px;}
+.prog-badge{display:inline-block;font-size:11px;font-weight:800;padding:4px 12px;border-radius:20px;letter-spacing:.06em;}
+.prog-badge.b1{background:var(--blue-mid);color:#185FA5;}
+.prog-badge.b2{background:#FAE8A0;color:#7A5200;}
+.prog-badge.b3{background:#DDD6FF;color:#4A35A0;}
+
+.act-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.act-card{background:#fff;border-radius:var(--r);padding:22px 20px;border:1.5px solid #E8F0FF;transition:transform .2s,border-color .2s;}
+.act-card:hover{transform:translateY(-3px);border-color:var(--blue-mid);}
+.act-emoji{font-size:32px;margin-bottom:12px;display:block;}
+.act-name{font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;color:var(--navy);margin-bottom:6px;}
+.act-desc{font-size:12.5px;color:var(--gray);line-height:1.55;}
+
+.calc-wrap{background:var(--blue-lt);border:1.5px solid var(--blue-mid);border-radius:var(--r);padding:32px;margin-bottom:20px;}
+.sec-alt .calc-wrap{background:#fff;border-color:#E0EAF8;}
+.calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+.calc-btn{background:#fff;border:2px solid #E0EDF8;border-radius:14px;padding:18px 12px;cursor:pointer;text-align:center;position:relative;transition:.18s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:64px;}
+.calc-btn:hover{border-color:var(--blue);transform:translateY(-2px);}
+.calc-btn.active{border-color:var(--blue);background:var(--blue);color:#fff;}
+.calc-btn.active .calc-price{color:#fff;}
+.calc-btn.calc-best{border-color:var(--yellow);}
+.calc-btn.calc-best.active{background:var(--yellow);border-color:var(--yellow);color:var(--navy);}
+.calc-label{font-size:13.5px;font-weight:800;color:var(--navy);line-height:1.3;font-family:'Nunito',sans-serif;}
+.calc-btn.active .calc-label{color:#fff;}
+.calc-btn.calc-best.active .calc-label{color:var(--navy);}
+.calc-price{font-size:13px;font-weight:800;color:var(--blue);}
+.calc-badge{font-size:10px;font-weight:800;background:var(--blue-mid);color:var(--blue-dk);padding:2px 6px;border-radius:20px;position:absolute;top:-8px;left:50%;transform:translateX(-50%);white-space:nowrap;}
+.calc-badge.best{background:var(--yellow);color:var(--navy);}
+.calc-result{background:#fff;border-radius:12px;padding:20px 24px;text-align:center;margin-bottom:20px;min-height:72px;display:flex;align-items:center;justify-content:center;}
+.calc-result-text{color:#aab;font-size:14px;font-weight:600;}
+.calc-result-price{font-size:32px;font-weight:900;color:var(--blue-dk);}
+.calc-result-sub{font-size:14px;font-weight:600;color:var(--gray);}
+@media(max-width:960px){.calc-grid{grid-template-columns:repeat(2,1fr);}.calc-wrap{padding:20px;}}
+.sched-desktop .vtl::before{display:none;}
+.sched-desktop .vtl-item{padding-bottom:0;}
+.gal-menu-item{display:none;}
+@media(max-width:960px){.gal-menu-item{display:block;}}
+.gal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:12px;}
+.gal-item{border-radius:var(--rs);overflow:hidden;}
+.gal-item:first-child{grid-row:1/3;}
+.gal-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.gal-ph svg{opacity:.3;}
+.gal-ph span{font-size:12px;font-weight:700;opacity:.5;}
+.gal-item:nth-child(1) .gal-ph{background:#C8E4F5;color:var(--blue-dk);}
+.gal-item:nth-child(2) .gal-ph{background:#FAE8A0;color:#7A5200;}
+.gal-item:nth-child(3) .gal-ph{background:#C9F0E0;color:#1A6B4A;}
+.gal-item:nth-child(4) .gal-ph{background:#F5CCE0;color:#8B3060;}
+.gal-item:nth-child(5) .gal-ph{background:#D6CCFF;color:#4A35A0;}
+
+/* FOOD / NUTRITION — flip cards */
+.food-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;perspective:1400px;}
+.food-card{position:relative;height:360px;cursor:pointer;}
+.food-card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.15,.2,1);}
+.food-card:hover .food-card-inner,.food-card.is-flipped .food-card-inner{transform:rotateY(180deg);}
+.food-face{position:absolute;inset:0;border-radius:var(--r);-webkit-backface-visibility:hidden;backface-visibility:hidden;overflow:hidden;display:flex;flex-direction:column;}
+.food-front{padding:0;border:1px solid #E8F0FF;box-shadow:0 4px 20px rgba(26,35,64,.04);}
+.food-photo{position:relative;height:170px;background-size:14px 14px;background-image:repeating-linear-gradient(45deg,transparent 0 6px,rgba(255,255,255,.5) 6px 7px);display:flex;align-items:center;justify-content:center;}
+.food-photo-ph{display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.55;}
+.food-photo-ph svg{opacity:.7;}
+.food-photo-ph span{font-family:'Nunito Sans',monospace;font-size:10.5px;font-weight:700;letter-spacing:.04em;}
+.food-icon{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#fff;box-shadow:0 6px 18px rgba(26,35,64,.12);position:absolute;left:22px;bottom:-26px;z-index:2;}
+.food-text-area{padding:38px 24px 24px;flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:14px;}
+.food-title{font-family:'Nunito',sans-serif;font-size:17.5px;font-weight:900;color:var(--navy);line-height:1.25;}
+.food-back{transform:rotateY(180deg);background:var(--navy);color:#fff;justify-content:center;gap:14px;padding:30px 28px;}
+.food-hint{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-lt);display:flex;align-items:center;gap:6px;}
+.food-hint svg{transition:transform .3s;}
+.food-card:hover .food-hint svg{transform:translateX(3px);}
+.food-back-eyebrow{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);}
+.food-back-text{font-size:14px;line-height:1.65;color:rgba(255,255,255,.94);font-weight:500;}
+.food-card.c1 .food-front{background:#fff;}
+.food-card.c1 .food-photo{background-color:var(--blue-mid);}
+.food-card.c1 .food-photo-ph{color:var(--blue-dk);}
+.food-card.c1 .food-icon{color:var(--blue-dk);}
+.food-card.c2 .food-front{background:#fff;}
+.food-card.c2 .food-photo{background-color:#FAE8A0;}
+.food-card.c2 .food-photo-ph{color:#7A5200;}
+.food-card.c2 .food-icon{color:#7A5200;}
+.food-card.c3 .food-front{background:#fff;}
+.food-card.c3 .food-photo{background-color:#C9F0E0;}
+.food-card.c3 .food-photo-ph{color:#1A6B4A;}
+.food-card.c3 .food-icon{color:#1A6B4A;}
+.food-card.c4 .food-front{background:#fff;}
+.food-card.c4 .food-photo{background-color:#DDD6FF;}
+.food-card.c4 .food-photo-ph{color:#4A35A0;}
+.food-card.c4 .food-icon{color:#4A35A0;}
+@media(max-width:1100px){.food-grid{grid-template-columns:repeat(2,1fr);}.food-card{height:340px;}}
+@media(max-width:540px){.food-grid{grid-template-columns:repeat(2,1fr);gap:10px;}.food-card{height:280px;}.food-card:hover .food-card-inner{transform:none;}.food-card.is-flipped .food-card-inner{transform:rotateY(180deg);}.food-photo{height:120px;}.food-text-area{padding:36px 14px 16px;gap:10px;}.food-title{font-size:14.5px;line-height:1.25;}.food-hint{font-size:9.5px;letter-spacing:.08em;gap:4px;}.food-hint svg{width:9px;height:9px;}.food-back{padding:18px 14px;gap:8px;}.food-back-eyebrow{font-size:9.5px;letter-spacing:.12em;}.food-back-text{font-size:12px;line-height:1.55;}.food-icon svg{width:22px;height:22px;}.food-photo-ph svg{width:24px;height:24px;}.food-photo-ph span{font-size:9.5px;}}
+
+.price-note{background:var(--yellow-lt);border-radius:var(--rs);padding:16px 20px;font-size:13.5px;color:var(--navy2);font-weight:600;line-height:1.6;border:1px solid #FAE8A0;margin-bottom:24px;text-align:center;}
+.price-cta{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-blue{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-size:14px;font-weight:800;padding:13px 26px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:none;transition:background .2s;}
+.btn-blue:hover{background:var(--blue-dk);}
+.btn-green{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-size:14px;font-weight:800;padding:13px 24px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:none;transition:background .2s;}
+.btn-green:hover{background:#1fba59;}
+
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.rev-card{background:#fff;border-radius:var(--r);padding:24px;border:1px solid #E8F0FF;}
+.rev-stars{color:var(--yellow);font-size:15px;letter-spacing:2px;margin-bottom:10px;}
+.rev-text{font-size:14px;color:#3A4A62;line-height:1.65;margin-bottom:16px;font-weight:500;}
+.rev-author{display:flex;align-items:center;gap:10px;}
+.rev-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif;}
+.rev-name{font-family:'Nunito',sans-serif;font-size:13.5px;font-weight:800;color:var(--navy);}
+.rev-sub{font-size:11.5px;color:var(--gray-lt);font-weight:600;}
+
+.apply-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;}
+.apply-grid::after{content:'';position:absolute;top:35px;left:calc(33.33% - 10px);right:calc(33.33% - 10px);height:2px;background:repeating-linear-gradient(90deg,var(--blue-mid) 0,var(--blue-mid) 8px,transparent 8px,transparent 18px);}
+.apply-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 16px;}
+.step-circle{width:70px;height:70px;border-radius:50%;background:var(--blue-lt);border:3px solid var(--blue-mid);display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:20px;position:relative;z-index:1;flex-shrink:0;}
+.step-title{font-family:'Nunito',sans-serif;font-size:17px;font-weight:900;color:var(--navy);margin-bottom:8px;}
+.step-desc{font-size:13.5px;color:var(--gray);line-height:1.6;}
+.contact-box{margin-top:52px;background:var(--blue-lt);border-radius:24px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.contact-box h4{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:6px;}
+.contact-box p{font-size:14px;color:var(--gray);font-weight:500;}
+.contact-btns{display:flex;gap:10px;flex-wrap:nowrap;}
+.btn-email{display:flex;align-items:center;gap:7px;background:#fff;border:1.5px solid #D0E8F8;color:var(--navy);font-size:14px;font-weight:800;padding:12px 20px;border-radius:30px;text-decoration:none;font-family:'Nunito',sans-serif;white-space:nowrap;}
+.contact-btns .btn-green{white-space:nowrap;}
+@media(max-width:540px){.contact-btns{gap:8px;}.contact-btns .btn-green,.contact-btns .btn-email{padding:10px 14px;font-size:12.5px;}}
+
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+.faq-item{background:#fff;border-radius:var(--rs);border:1px solid #E8F0FF;overflow:hidden;}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 22px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;color:var(--navy);background:none;border:none;cursor:pointer;text-align:left;gap:16px;}
+.faq-arr{width:28px;height:28px;border-radius:50%;background:var(--blue-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s;color:var(--blue);}
+.faq-item.open .faq-arr{transform:rotate(180deg);background:var(--blue);color:#fff;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a-in{padding:0 22px 18px;font-size:14px;color:var(--gray);line-height:1.7;}
+
+.cta-sec{background:var(--blue);padding:80px 56px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.cta-text h2{font-size:32px;font-weight:900;color:#fff;margin-bottom:8px;}
+.cta-text p{font-size:15px;color:rgba(255,255,255,.8);font-weight:500;}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-cta-y{background:var(--yellow);color:var(--navy);font-size:15px;font-weight:800;padding:14px 28px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:none;display:inline-flex;align-items:center;transition:background .2s;}
+.btn-cta-y:hover{background:#f0bb3a;}
+.btn-cta-wa{display:flex;align-items:center;gap:8px;background:#fff;color:var(--navy);font-size:15px;font-weight:800;padding:14px 24px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:none;transition:.2s;}
+.btn-cta-wa:hover{background:#f0f8ff;}
+
+footer{background:var(--navy);padding:40px 56px;display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:start;}
+.ft-logo{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.ft-logo-icon{width:54px;height:54px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.18),0 0 0 4px rgba(255,255,255,.06);}
+.ft-logo-icon img{width:100%;height:100%;object-fit:cover;transform:scale(1.22);display:block;}
+.ft-logo-name{font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;color:#fff;letter-spacing:-.2px;line-height:1.15;}
+.ft-logo-sub{font-family:'Nunito Sans',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
+.ft-tag{font-size:12px;color:#4A6080;font-weight:600;line-height:1.55;}
+.ft-links{display:flex;flex-direction:column;gap:10px;align-items:center;}
+.ft-links a{font-size:13px;color:#4A6080;font-weight:600;text-decoration:none;transition:color .2s;}
+.ft-links a:hover{color:var(--blue);}
+.ft-info{text-align:right;font-size:12px;color:#4A6080;font-weight:600;line-height:1.8;}
+.ft-copy{margin-top:10px;font-size:11px;color:#3A4E6A;font-weight:600;}
+
+.vtl{position:relative;padding-left:40px;}
+.vtl::before{content:'';position:absolute;left:14px;top:6px;bottom:6px;width:2px;background:var(--blue-mid);border-radius:2px;}
+.vtl-item{position:relative;padding-bottom:28px;}
+.vtl-item:last-child{padding-bottom:0;}
+.vtl-dot{position:absolute;left:-26px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 2px var(--blue);}
+.vtl-item.is-break .vtl-dot{background:var(--yellow);box-shadow:0 0 0 2px var(--yellow);}
+.vtl-time{font-size:11.5px;font-weight:800;color:var(--blue);letter-spacing:.06em;margin-bottom:3px;}
+.vtl-item.is-break .vtl-time{color:var(--yellow-dk);}
+.vtl-title{font-family:"Nunito",sans-serif;font-size:15px;font-weight:800;color:var(--navy);margin-bottom:3px;}
+.vtl-desc{font-size:13px;color:var(--gray);line-height:1.5;}
+.vtl-item.is-break .vtl-title{color:var(--yellow-dk);}
+@media(max-width:960px){.sched-mobile{display:flex;justify-content:center;}.sched-mobile .vtl{max-width:420px;width:100%;padding-left:34px;}.sched-mobile .vtl::before{left:14px;top:11px;bottom:11px;width:2px;}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:960px){
+  .nav{padding:13px 20px;}
+  .nav-links,.nav-right .btn-primary,.nav-right .btn-wa,.nav-right .lang-switch{display:none;}
+  .burger{display:flex;}
+  .nav-mobile-right{display:flex;}
+  .btn-hero-video{display:inline-flex;}
+  .hero-cta-row{width:100%;gap:10px;}
+  .hero-cta-row .btn-hero{flex:1 1 60%;padding:15px 18px;font-size:14.5px;}
+  .hero-cta-row .btn-hero-video{flex:1 1 30%;padding:14px 14px;font-size:14.5px;}
+  .hero{grid-template-columns:1fr;min-height:auto;max-height:none;}
+  .hero-left{padding:44px 28px 36px;}
+  .hero h1{font-size:32px;white-space:normal;}
+  .hero-right{display:none;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .stats .stat:nth-child(1),.stats .stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.07);}
+  .sec{padding:52px 24px 70px;}
+  .sec::after{height:50px;}
+  .sh2{font-size:26px;}
+  .ssub{margin-bottom:32px;}
+  .rev-grid{grid-template-columns:1fr;}
+  .prog-grid{grid-template-columns:1fr 1fr;gap:12px;}
+  .prog-grid .prog-card{padding:18px 16px;}
+  .prog-grid .prog-card.c3{grid-column:1 / -1;}
+  .prog-grid .prog-ico{width:44px;height:44px;border-radius:13px;margin-bottom:12px;font-size:22px;}
+  .prog-grid .prog-card h3{font-size:15px;margin-bottom:8px;}
+  .prog-grid .prog-card p{font-size:12.5px;line-height:1.55;margin-bottom:12px;}
+  .prog-grid .prog-badge{font-size:10px;padding:3px 10px;}
+  .act-grid{grid-template-columns:1fr 1fr;}
+  .apply-grid{grid-template-columns:1fr;gap:28px;}
+  .apply-grid::after{display:none;}
+  .apply-step{flex-direction:row;text-align:left;align-items:flex-start;gap:16px;padding:0;}
+  .step-circle{margin-bottom:0;flex-shrink:0;width:56px;height:56px;font-size:24px;}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px;}
+  .gal-item:first-child{grid-row:1;}
+  .cta-sec{padding:52px 24px;flex-direction:column;align-items:center;text-align:center;}
+  .cta-sec h2{font-size:24px;}
+  .cta-btns{flex-direction:column;align-items:center;width:100%;}
+  .btn-cta-wa,.btn-cta-y{width:100%;justify-content:center;}
+  footer{grid-template-columns:1fr;gap:24px;}
+  .ft-info{text-align:left;}
+  .ft-links{align-items:flex-start;}
+  .contact-box{flex-direction:column;align-items:flex-start;padding:24px;}
+}
+
+/* PROGRAMS — activity chip strip below 3 cards */
+.prog-extras{margin-top:36px;padding-top:32px;border-top:1.5px dashed var(--blue-mid);}
+.prog-extras-label{font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--gray-lt);text-transform:uppercase;margin-bottom:18px;text-align:center;}
+.prog-extras-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.prog-chip{display:flex;align-items:center;gap:14px;background:#fff;border:1.5px solid #E8F0FF;border-radius:16px;padding:14px 18px;transition:border-color .2s,transform .2s;}
+.prog-chip:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.prog-chip-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.prog-chip-name{font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;color:var(--navy);line-height:1.1;}
+.prog-chip-sub{font-size:11.5px;color:var(--gray);font-weight:600;margin-top:2px;}
+.prog-extras-more{margin-top:18px;text-align:center;font-size:13px;color:var(--gray);font-weight:600;line-height:1.6;}
+@media(max-width:960px){.prog-extras-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:540px){.prog-extras-grid{grid-template-columns:1fr 1fr;gap:10px;}.prog-chip{padding:10px 12px;gap:10px;}.prog-chip-name{font-size:13px;}.prog-chip-sub{font-size:10.5px;}}
+
+/* GALLERY — multi-photo cycling cards */
+.gal-item{position:relative;cursor:pointer;}
+.gal-slides{position:absolute;inset:0;}
+.gal-slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;opacity:0;transition:opacity .9s ease;}
+.gal-slide.active{opacity:1;}
+.gal-slide svg{opacity:.32;}
+.gal-slide-label{font-family:'Nunito Sans',sans-serif;font-size:10.5px;font-weight:700;opacity:.45;letter-spacing:.06em;}
+.gal-dots{position:absolute;bottom:10px;right:10px;display:flex;gap:5px;z-index:2;background:rgba(255,255,255,.85);padding:5px 8px;border-radius:14px;backdrop-filter:blur(6px);}
+.gal-dots span{width:5px;height:5px;border-radius:50%;background:rgba(26,35,64,.3);transition:.3s;}
+.gal-dots span.active{background:var(--navy);width:14px;border-radius:3px;}
+.gal-label{position:absolute;top:12px;left:14px;background:rgba(255,255,255,.95);color:var(--navy);font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;padding:5px 10px;border-radius:16px;z-index:2;backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.gal-count{position:absolute;top:12px;right:14px;background:rgba(26,35,64,.7);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:10px;z-index:2;display:flex;align-items:center;gap:4px;}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(10,18,40,.92);z-index:1000;display:none;align-items:center;justify-content:center;padding:40px;backdrop-filter:blur(8px);}
+.lightbox.open{display:flex;}
+.lb-stage{position:relative;max-width:min(1100px,92vw);width:100%;aspect-ratio:16/10;max-height:75vh;border-radius:20px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.lb-photo{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;animation:lbFade .35s ease;}
+.lb-photo svg{opacity:.4;}
+.lb-photo-label{font-family:'Nunito Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;opacity:.55;text-transform:uppercase;}
+@keyframes lbFade{from{opacity:0;transform:scale(.98);}to{opacity:1;transform:scale(1);}}
+.lb-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;z-index:10;}
+.lb-close:hover{background:rgba(255,255,255,.22);}
+.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,transform .2s;z-index:10;}
+.lb-arrow:hover{background:rgba(255,255,255,.22);}
+.lb-prev{left:24px;}.lb-next{right:24px;}
+.lb-prev:hover{transform:translateY(-50%) translateX(-2px);}
+.lb-next:hover{transform:translateY(-50%) translateX(2px);}
+.lb-footer{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.1);padding:10px 18px;border-radius:30px;backdrop-filter:blur(8px);}
+.lb-title{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#fff;}
+.lb-counter{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);font-variant-numeric:tabular-nums;}
+@media(max-width:600px){.lightbox{padding:16px;}.lb-arrow{width:42px;height:42px;}.lb-prev{left:8px;}.lb-next{right:8px;}.lb-close{top:12px;right:12px;}}
+
+/* VIDEO MODAL (9:16) */
+.vid-modal{position:fixed;inset:0;background:rgba(10,18,40,.92);z-index:1000;display:none;align-items:center;justify-content:center;padding:32px;backdrop-filter:blur(8px);}
+.vid-modal.open{display:flex;animation:lbFade .25s ease;}
+.vid-modal-stage{position:relative;height:min(86vh,820px);aspect-ratio:9/16;max-width:92vw;border-radius:24px;overflow:hidden;background:var(--blue-mid);box-shadow:0 0 0 5px rgba(255,255,255,.85),0 24px 64px rgba(0,0,0,.35);}
+.vid-modal-stage .hero-video-inner{position:absolute;inset:0;}
+.vid-modal-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;z-index:2;}
+.vid-modal-close:hover{background:rgba(255,255,255,.22);}
+@media(max-width:600px){.vid-modal{padding:14px;}.vid-modal-close{top:12px;right:12px;}.vid-modal-stage{height:auto;width:min(92vw,440px);max-height:88vh;}}
+
+/* REVIEWS — aggregator badges + bento + marquee */
+.rev-badges{display:flex;gap:14px;margin-bottom:40px;flex-wrap:wrap;justify-content:center;}
+.rev-badge{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #E0EAF8;border-radius:14px;padding:12px 18px;text-decoration:none;transition:transform .2s,box-shadow .2s,border-color .2s;min-width:230px;}
+.rev-badge:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,35,64,.08);border-color:var(--blue-mid);}
+.rev-badge-logo{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;flex-shrink:0;}
+.rev-badge-logo span{filter:drop-shadow(0 1px 2px rgba(0,0,0,.15));}
+.rev-badge-name{font-family:'Nunito',sans-serif;font-size:13px;font-weight:900;color:var(--navy);line-height:1.1;}
+.rev-badge-stars{font-size:12px;color:#F5A623;font-weight:700;margin-top:3px;letter-spacing:.5px;}
+.rev-badge-stars strong{color:var(--navy);margin-left:3px;}
+.rev-badge-stars span{color:var(--gray);font-weight:600;margin-left:4px;letter-spacing:0;}
+
+.rev-bento{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:340px 260px;gap:16px;}
+.rb-video{grid-column:span 3;grid-row:span 1;background:linear-gradient(135deg,#1A2340 0%,#2C3A5C 100%);border-radius:var(--r);position:relative;overflow:hidden;padding:28px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;cursor:pointer;}
+.rb-video::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent 0 14px,rgba(255,255,255,.04) 14px 15px);}
+.rb-video-ph{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+.rb-play{width:62px;height:62px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(249,200,85,.4);transition:transform .2s;margin-bottom:6px;}
+.rb-video:hover .rb-play{transform:scale(1.08);}
+.rb-video-label{font-family:'Nunito Sans',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--yellow);}
+.rb-video-sub{font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:rgba(255,255,255,.75);}
+.rb-video-quote{position:relative;font-family:'Nunito',sans-serif;font-size:18px;font-weight:800;line-height:1.35;color:#fff;letter-spacing:-.2px;}
+
+.rb-wa{grid-column:span 3;grid-row:span 1;background:#ECE5DD;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;position:relative;}
+.rb-wa-header{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#075E54;color:#fff;}
+.rb-wa-av{width:36px;height:36px;border-radius:50%;background:#FBBC05;color:#5D4400;font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rb-wa-name{font-family:'Nunito Sans',sans-serif;font-size:14px;font-weight:700;color:#fff;line-height:1.1;}
+.rb-wa-status{font-size:11px;color:rgba(255,255,255,.7);font-weight:500;margin-top:2px;}
+.rb-wa-icons{margin-left:auto;display:flex;gap:14px;align-items:center;opacity:.85;}
+.rb-wa-icons svg{fill:#fff;}
+.rb-wa-body{flex:1;padding:14px;display:flex;flex-direction:column;gap:6px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 6 L24 16 L34 18 L26 25 L28 35 L20 30 L12 35 L14 25 L6 18 L16 16 Z' fill='%23DDD2C5' opacity='.4'/%3E%3C/svg%3E");}
+.rb-wa-msg{align-self:flex-start;max-width:78%;background:#fff;color:#1A2340;font-size:13px;line-height:1.45;padding:8px 11px 8px 11px;border-radius:9px;font-family:'Nunito Sans',sans-serif;font-weight:500;position:relative;box-shadow:0 1px 1px rgba(0,0,0,.06);}
+.rb-wa-msg.rb-wa-in{background:#DCF8C6;}
+.rb-wa-time{font-size:10px;color:#5A6A85;margin-left:8px;font-weight:600;float:right;padding-left:6px;padding-top:3px;}
+.rb-wa-source{position:absolute;bottom:8px;right:10px;display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.9);padding:4px 9px;border-radius:12px;font-size:10.5px;font-weight:700;color:#5A6A85;backdrop-filter:blur(4px);}
+
+.rb-text{grid-column:span 2;grid-row:span 1;background:#fff;border:1px solid #E8F0FF;border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s;}
+.rb-text:hover{border-color:var(--blue-mid);transform:translateY(-2px);}
+.rb-text-outcome{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;color:var(--blue-dk);background:var(--blue-lt);padding:5px 10px;border-radius:20px;align-self:flex-start;border:1px solid var(--blue-mid);}
+.rb-stars{color:var(--yellow);font-size:13px;letter-spacing:2px;}
+.rb-text-body{font-size:13.5px;color:#3A4A62;line-height:1.6;font-weight:500;flex:1;}
+.rb-text-author{display:flex;align-items:center;gap:10px;padding-top:6px;border-top:1px solid #F0F4FF;margin-top:auto;}
+.rb-text-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rb-text-name{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--navy);line-height:1.1;}
+.rb-text-sub{font-size:11.5px;color:var(--gray-lt);font-weight:600;margin-top:2px;}
+
+@media(max-width:1100px){
+  .rev-bento{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;}
+  .rb-video,.rb-wa{grid-column:span 2;height:340px;}
+  .rb-text{grid-column:span 1;min-height:220px;}
+}
+@media(max-width:540px){
+  .rev-bento{grid-template-columns:1fr;}
+  .rb-video,.rb-wa,.rb-text{grid-column:span 1;}
+  .rb-video{height:300px;}
+  .rb-wa{height:340px;}
+}
+/* On mobile: keep only video + WhatsApp reviews — drop the 3 text cards */
+@media(max-width:768px){
+  .rb-text-1,.rb-text-2,.rb-text-3{display:none;}
+  .rev-cta .btn-blue{width:100%;justify-content:center;padding:16px 22px;font-size:15px;border-radius:14px;box-shadow:0 8px 24px rgba(43,111,219,.25);}
+  .rev-cta{margin-top:8px;}
+}
+
+/* Marquee */
+.rev-marquee{overflow:hidden;margin:36px -56px 24px;padding:14px 0;background:#fff;border-top:1px solid #E0EAF8;border-bottom:1px solid #E0EAF8;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+.rev-marquee-track{display:flex;gap:36px;animation:revScroll 50s linear infinite;width:max-content;font-family:'Nunito',sans-serif;font-size:14.5px;font-weight:700;color:var(--navy);white-space:nowrap;}
+.rev-marquee-track span{display:inline-flex;align-items:center;}
+@keyframes revScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media(max-width:960px){.rev-marquee{margin-left:-24px;margin-right:-24px;font-size:13px;}}
+
+.rev-cta{display:flex;justify-content:center;margin-top:16px;}
+
+/* FIND US — section with white card containing info + map split */
+.findus{position:relative;padding:80px 56px 100px;background:#fff;overflow:hidden;}
+.findus-container{max-width:1100px;margin:0 auto;}
+.findus-header{text-align:center;margin-bottom:36px;}
+.findus-header .tag{display:block;}
+.findus-header .sh2{margin-bottom:0;}
+.findus-card{display:grid;grid-template-columns:400px 1fr;background:#fff;border-radius:28px;box-shadow:0 30px 70px rgba(15,28,60,.10),0 6px 22px rgba(15,28,60,.04);overflow:hidden;border:1px solid #EEF4FB;}
+.findus-info{padding:38px 36px 32px;display:flex;flex-direction:column;gap:18px;}
+.findus-info-head{display:flex;flex-direction:column;gap:6px;}
+.findus-info-eyebrow{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--blue);text-transform:uppercase;}
+.findus-info h3{font-family:'Nunito',sans-serif;font-size:28px;font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.4px;}
+.findus-info h3 em{color:var(--blue);font-style:normal;}
+.findus-rows{display:flex;flex-direction:column;gap:14px;padding:18px 0;border-top:1px solid #EEF4FB;border-bottom:1px solid #EEF4FB;}
+.findus-row{display:flex;align-items:flex-start;gap:12px;}
+.findus-row-icon{width:34px;height:34px;border-radius:10px;background:var(--blue-lt);color:var(--blue-dk);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.findus-row-label{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--gray-lt);text-transform:uppercase;margin-bottom:2px;}
+.findus-row-value{font-family:'Nunito',sans-serif;font-size:14.5px;font-weight:800;color:var(--navy);line-height:1.3;}
+.findus-row-value a{color:inherit;text-decoration:none;}
+.findus-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+.findus-btns a{flex:1;min-width:140px;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:'Nunito',sans-serif;font-size:13.5px;font-weight:800;padding:12px 18px;border-radius:30px;text-decoration:none;transition:.2s;}
+.btn-maps{background:var(--blue);color:#fff;}
+.btn-maps:hover{background:var(--blue-dk);}
+.btn-route{background:#fff;color:var(--navy);border:1.5px solid #D0E0F0;}
+.btn-route:hover{border-color:var(--blue);color:var(--blue);}
+.findus-map-side{position:relative;min-height:460px;background:#EEF4FB;}
+.findus-map{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
+.findus-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1100px;margin:32px auto 0;}
+.findus-badge{display:flex;align-items:center;gap:14px;padding:18px 22px;background:var(--blue-lt);border-radius:16px;border:1px solid var(--blue-mid);}
+.findus-badge-icon{width:42px;height:42px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 2px 6px rgba(26,35,64,.06);}
+.findus-badge-text{display:flex;flex-direction:column;}
+.findus-badge-title{font-family:'Nunito',sans-serif;font-size:14.5px;font-weight:900;color:var(--navy);line-height:1.15;}
+.findus-badge-sub{font-size:12px;color:var(--gray);font-weight:600;margin-top:2px;}
+
+@media(max-width:960px){
+  .findus{padding:52px 24px 70px;}
+  .findus-card{grid-template-columns:1fr;}
+  .findus-info{padding:28px 24px 24px;}
+  .findus-info h3{font-size:24px;}
+  .findus-map-side{min-height:280px;order:-1;}
+  .findus-badges{grid-template-columns:1fr;gap:10px;margin-top:24px;}
+  .findus-badge{padding:16px 18px;}
+}
+
+/* i18n — CSS-driven language switching via html[lang] attribute */
+html[lang="ru"] [data-lang="en"]{display:none!important;}
+html[lang="en"] [data-lang="ru"]{display:none!important;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <img src="assets/logo.jpg" alt="Dreamax Kindergarten">
+    </div>
+    <div>
+      <div class="logo-name">Dreamax Kindergarten</div>
+      <div class="logo-sub" data-lang="ru">Пхукет, Таиланд</div>
+      <div class="logo-sub" data-lang="en">Phuket, Thailand</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#programs" data-lang="ru">Программа</a>
+    <a href="#programs" data-lang="en">Programme</a>
+    <a href="#food" data-lang="ru">Питание</a>
+    <a href="#food" data-lang="en">Nutrition</a>
+    <a href="#pricing" data-lang="ru">Цены</a>
+    <a href="#pricing" data-lang="en">Pricing</a>
+    <a href="#reviews" data-lang="ru">Отзывы</a>
+    <a href="#reviews" data-lang="en">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#findus" data-lang="ru">Контакты</a>
+    <a href="#findus" data-lang="en">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switch" id="desktop-lang">
+      <button class="lang-btn" id="d-ru" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" id="d-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="https://wa.me/66635067812" target="_blank" class="btn-wa">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.062.522 4.004 1.442 5.7L.055 23.455a.5.5 0 0 0 .611.601l5.861-1.372A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 0 1-5.022-1.379l-.36-.214-3.733.874.898-3.645-.235-.374A9.782 9.782 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      WhatsApp
+    </a>
+    <button class="btn-primary" data-lang="ru" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Записать ребёнка</button>
+    <button class="btn-primary" data-lang="en" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Enrol Your Child</button>
+  </div>
+  <div class="nav-mobile-right">
+    <div class="mm-lang-switch nav-mob-lang">
+      <button class="mm-lang-btn" id="m-ru" onclick="setLang('ru')">RU</button>
+      <button class="mm-lang-btn" id="m-en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-backdrop" id="mobile-backdrop"></div>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mm-header">
+    <a href="#" class="mm-header-logo" onclick="document.getElementById('mm-close').click();">
+      <div class="mm-header-logo-icon"><img src="assets/logo.jpg" alt="Dreamax"></div>
+      <div>
+        <div class="mm-header-logo-name">Dreamax</div>
+        <div class="mm-header-logo-sub" data-lang="ru">Kindergarten · Пхукет</div>
+        <div class="mm-header-logo-sub" data-lang="en">Kindergarten · Phuket</div>
+      </div>
+    </a>
+    <button class="mm-close" id="mm-close" aria-label="Close menu">
+      <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M4 4L14 14M14 4L4 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <div class="mm-scroll">
+    <div class="mm-group">
+      <div class="mm-group-label" data-lang="ru">О саде</div>
+      <div class="mm-group-label" data-lang="en">About</div>
+      <a class="mm-link" href="#programs" onclick="closeMob()">
+        <span data-lang="ru">Программа</span><span data-lang="en">Programme</span>
+        <svg class="mm-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="mm-link" href="#schedule" onclick="closeMob()">
+        <span data-lang="ru">Расписание</span><span data-lang="en">Schedule</span>
+        <svg class="mm-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="mm-link" href="#food" onclick="closeMob()">
+        <span data-lang="ru">Питание</span><span data-lang="en">Nutrition</span>
+        <svg class="mm-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="mm-link" href="#gallery" onclick="closeMob()">
+        <span data-lang="ru">Галерея</span><span data-lang="en">Gallery</span>
+        <svg class="mm-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="mm-group">
+      <div class="mm-group-label" data-lang="ru">Информация</div>
+      <div class="mm-group-label" data-lang="en">Info</div>
+      <a class="mm-link" href="#pricing" onclick="closeMob()">
+        <span data-lang="ru">Цены</span><span data-lang="en">Pricing</span>
+        <svg class="mm-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="mm-link" href="#reviews" onclick="closeMob()">
+        <span data-lang="ru">Отзывы</span><span data-lang="en">Reviews</span>
+        <svg class="mm-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="mm-link" href="#faq" onclick="closeMob()">
+        <span>FAQ</span>
+        <svg class="mm-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="mm-group">
+      <div class="mm-group-label" data-lang="ru">Поступление</div>
+      <div class="mm-group-label" data-lang="en">Enrolment</div>
+      <a class="mm-link" href="#apply" onclick="closeMob()">
+        <span data-lang="ru">Как поступить</span><span data-lang="en">How to enrol</span>
+        <svg class="mm-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="mm-link" href="#findus" onclick="closeMob()">
+        <span data-lang="ru">Где найти</span><span data-lang="en">Find us</span>
+        <svg class="mm-link-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="mm-footer">
+    <a href="https://wa.me/66635067812" target="_blank" class="btn-wa">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.062.522 4.004 1.442 5.7L.055 23.455a.5.5 0 0 0 .611.601l5.861-1.372A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 0 1-5.022-1.379l-.36-.214-3.733.874.898-3.645-.235-.374A9.782 9.782 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      WhatsApp · +66 635 067 812
+    </a>
+    <button class="btn-primary" data-lang="ru" onclick="closeMob();document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Записать ребёнка</button>
+    <button class="btn-primary" data-lang="en" onclick="closeMob();document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Enrol Your Child</button>
+    <div class="mm-contact">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span data-lang="ru">Пхукет, Таиланд · Пн–Пт 09:00–17:00</span>
+      <span data-lang="en">Phuket, Thailand · Mon–Fri 09:00–17:00</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      <span data-lang="ru">Пхукет · Международный детский сад с 2015 г.</span>
+      <span data-lang="en">Phuket · International Kindergarten since 2015</span>
+    </div>
+    <h1 data-lang="ru">Место, где дети<br>учатся думать<br>на <em>двух языках</em></h1>
+    <h1 data-lang="en">Where children<br>learn to think<br>in <em>two languages</em></h1>
+    <p class="hero-sub" data-lang="ru">Билингвальный сад для детей от 2,5 до 7 лет. Педагоги из Великобритании, Кембриджская программа, бассейн каждый день.</p>
+    <p class="hero-sub" data-lang="en">A bilingual kindergarten for children aged 2.5–7. Native UK teachers, Cambridge curriculum, and a swimming pool every single day.</p>
+    <div class="hero-facts">
+      <div class="hero-fact"><div class="hf-icon" style="background:#D0E8F8;">🇬🇧</div>
+        <span data-lang="ru">Педагоги-носители из Великобритании</span>
+        <span data-lang="en">Native-speaking teachers from the UK</span>
+      </div>
+      <div class="hero-fact"><div class="hf-icon" style="background:#FAE8A0;">📚</div>
+        <span data-lang="ru">Кембриджская + Российская программы</span>
+        <span data-lang="en">Cambridge + Russian curriculum combined</span>
+      </div>
+      <div class="hero-fact"><div class="hf-icon" style="background:#C9F0E0;">🏊</div>
+        <span data-lang="ru">Бассейн каждый день</span>
+        <span data-lang="en">Swimming pool every day</span>
+      </div>
+      <div class="hero-fact"><div class="hf-icon" style="background:#DDD6FF;">👶</div>
+        <span data-lang="ru">Максимум 8 детей в группе</span>
+        <span data-lang="en">Maximum 8 children per group</span>
+      </div>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#apply" class="btn-hero" data-lang="ru">Записать ребёнка</a>
+      <a href="#apply" class="btn-hero" data-lang="en">Enrol Your Child</a>
+      <a href="#" class="btn-hero-video" data-lang="ru" onclick="openVideoModal(event)">
+        <span class="bhv-icon"><svg width="11" height="11" viewBox="0 0 14 14" fill="currentColor"><polygon points="3,2 12,7 3,12"/></svg></span>
+        Видео
+      </a>
+      <a href="#" class="btn-hero-video" data-lang="en" onclick="openVideoModal(event)">
+        <span class="bhv-icon"><svg width="11" height="11" viewBox="0 0 14 14" fill="currentColor"><polygon points="3,2 12,7 3,12"/></svg></span>
+        Video
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-circ" style="width:480px;height:480px;background:var(--blue-mid);opacity:.3;top:-120px;right:-100px;"></div>
+    <div class="hero-bg-circ" style="width:200px;height:200px;background:var(--yellow);opacity:.2;bottom:100px;left:20px;"></div>
+    <div class="hero-bg-circ" style="width:120px;height:120px;background:var(--blue);opacity:.12;bottom:280px;right:40px;"></div>
+    <div class="hero-video-wrap">
+      <div class="hero-video-inner">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="22" stroke="#2A8DC9" stroke-width="2"/><polygon points="21,18 38,26 21,34" fill="#2A8DC9" opacity=".5"/></svg>
+        <span data-lang="ru">Вставьте вертикальное<br>видео вашего сада<br>(формат 9:16)</span>
+        <span data-lang="en">Insert your kindergarten<br>vertical video here<br>(9:16 format)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">2015</div>
+    <div class="stat-label" data-lang="ru">год основания — более 10 лет на Пхукете</div>
+    <div class="stat-label" data-lang="en">founded — 10+ years in Phuket</div>
+  </div>
+  <div class="stat"><div class="stat-num">RU+EN</div>
+    <div class="stat-label" data-lang="ru">два языка с первого дня в саду</div>
+    <div class="stat-label" data-lang="en">two languages from day one</div>
+  </div>
+  <div class="stat"><div class="stat-num">8</div>
+    <div class="stat-label" data-lang="ru">детей максимум в группе — каждый на виду</div>
+    <div class="stat-label" data-lang="en">children max per group — every child noticed</div>
+  </div>
+  <div class="stat"><div class="stat-num">UK</div>
+    <div class="stat-label" data-lang="ru">педагоги из Великобритании, носители языка</div>
+    <div class="stat-label" data-lang="en">native British teachers on our team</div>
+  </div>
+</div>
+
+<!-- PROGRAMS -->
+<section class="sec sec-white" id="programs">
+  <div class="tag reveal" data-lang="ru">Чему мы учим</div>
+  <div class="tag reveal" data-lang="en">What We Teach</div>
+  <div class="sh2 reveal" data-lang="ru">Наши <em>программы</em></div>
+  <div class="sh2 reveal" data-lang="en">Our <em>Programmes</em></div>
+  <div class="ssub reveal" data-lang="ru">Лучшее из двух систем образования — объединённое в одну живую среду</div>
+  <div class="ssub reveal" data-lang="en">The best of two educational systems — merged into one living environment</div>
+  <div class="prog-grid reveal">
+    <div class="prog-card c1">
+      <div class="prog-ico i1">🎓</div>
+      <h3 data-lang="ru">Кембриджская международная программа</h3>
+      <h3 data-lang="en">Cambridge International Programme</h3>
+      <p data-lang="ru">Педагоги из Великобритании с дипломами ведут занятия на английском. Phonics, Drama, Oxford Phonics, English Speaking Club — каждый день погружение через живое общение.</p>
+      <p data-lang="en">Qualified UK teachers lead daily English sessions. Phonics, Drama, Oxford Phonics, English Speaking Club — total immersion through real communication every day.</p>
+      <span class="prog-badge b1">Cambridge Certified</span>
+    </div>
+    <div class="prog-card c2">
+      <div class="prog-ico i2">📖</div>
+      <h3 data-lang="ru">Российская инновационная программа</h3>
+      <h3 data-lang="en">Russian Innovation Programme</h3>
+      <p data-lang="ru">Утверждена Министерством образования РФ. Развитие речи, обучение грамоте, математика, мир вокруг нас — всё для комфортного перехода в русскоязычную школу.</p>
+      <p data-lang="en">Approved by the Russian Ministry of Education. Speech development, literacy, maths, world knowledge — designed for a smooth transition to a Russian-medium school.</p>
+      <span class="prog-badge b2" data-lang="ru">МО РФ · Утверждена</span>
+      <span class="prog-badge b2" data-lang="en">Approved · Min. of Education RF</span>
+    </div>
+    <div class="prog-card c3">
+      <div class="prog-ico i3">⭐</div>
+      <h3 data-lang="ru">Дополнительные занятия</h3>
+      <h3 data-lang="en">Enrichment Activities</h3>
+      <p data-lang="ru">Тайская культура, бассейн, логопед, Clay Workshop, Cooking Class, Music, Arts &amp; Crafts, PE — более 15 активностей каждую неделю. Каждый день не похож на предыдущий.</p>
+      <p data-lang="en">Thai culture, swimming pool, speech therapy, Clay Workshop, Cooking Class, Music, Arts &amp; Crafts, PE — 15+ activities every week. No two days are alike.</p>
+      <span class="prog-badge b3" data-lang="ru">15+ активностей</span>
+      <span class="prog-badge b3" data-lang="en">15+ activities</span>
+    </div>
+  </div>
+
+  <div class="prog-extras reveal">
+    <div class="prog-extras-label">
+      <span data-lang="ru">+ каждую неделю</span><span data-lang="en">+ every week</span>
+    </div>
+    <div class="prog-extras-grid">
+      <div class="prog-chip">
+        <div class="prog-chip-icon" style="background:#C8E4F5;color:#1A6FA8;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17.5c2-1 4-1 6 0s4 1 6 0 4-1 6 0 4 1 4 1"/><path d="M2 12.5c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/><circle cx="13" cy="6" r="2"/><path d="M11 8c-2 1-3 3-2 5"/></svg>
+        </div>
+        <div class="prog-chip-text">
+          <div class="prog-chip-name" data-lang="ru">Бассейн</div><div class="prog-chip-name" data-lang="en">Swimming</div>
+          <div class="prog-chip-sub" data-lang="ru">каждый день</div><div class="prog-chip-sub" data-lang="en">every day</div>
+        </div>
+      </div>
+      <div class="prog-chip">
+        <div class="prog-chip-icon" style="background:#FAE8A0;color:#7A5200;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 0 0 6 0V4a3 3 0 0 0-6 0v7z"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+        </div>
+        <div class="prog-chip-text">
+          <div class="prog-chip-name">Drama</div>
+          <div class="prog-chip-sub" data-lang="ru">театр на английском</div><div class="prog-chip-sub" data-lang="en">English drama</div>
+        </div>
+      </div>
+      <div class="prog-chip">
+        <div class="prog-chip-icon" style="background:#C9F0E0;color:#1A6B4A;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M5 10c-2 0-2 3 0 4 0 3 3 8 7 8s7-5 7-8c2-1 2-4 0-4-3 0-2-3-7-3s-4 3-7 3z"/></svg>
+        </div>
+        <div class="prog-chip-text">
+          <div class="prog-chip-name">Thai Culture</div>
+          <div class="prog-chip-sub" data-lang="ru">язык и традиции</div><div class="prog-chip-sub" data-lang="en">language &amp; tradition</div>
+        </div>
+      </div>
+      <div class="prog-chip">
+        <div class="prog-chip-icon" style="background:#DDD6FF;color:#4A35A0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 22c4 0 8-2.5 8-7 0-1.5-1-2.5-2-2.5-3 0-3 3-6 3-3 0-4-2-5-2-1.5 0-3 1-3 3 0 4 4 5.5 8 5.5z"/></svg>
+        </div>
+        <div class="prog-chip-text">
+          <div class="prog-chip-name">Arts &amp; Clay</div>
+          <div class="prog-chip-sub" data-lang="ru">творчество и лепка</div><div class="prog-chip-sub" data-lang="en">crafts &amp; pottery</div>
+        </div>
+      </div>
+    </div>
+    <div class="prog-extras-more">
+      <span data-lang="ru">+ Cooking · Music · PE · Boxing · Логопед · Phonics · Speaking Club · Reading Club · Йога · Стихи и сказки</span>
+      <span data-lang="en">+ Cooking · Music · PE · Boxing · Speech Therapy · Phonics · Speaking Club · Reading Club · Yoga · Storytelling</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+<section class="sec sec-yellow" id="gallery">
+  <div class="tag reveal" data-lang="ru">Наш сад</div>
+  <div class="tag reveal" data-lang="en">Our Kindergarten</div>
+  <div class="sh2 reveal" data-lang="ru">Посмотрите <em>как у нас</em></div>
+  <div class="sh2 reveal" data-lang="en">See what <em>we're like</em></div>
+  <div class="ssub reveal" data-lang="ru">Яркая среда, в которой дети хотят учиться. Кликните на карточку — откроется полная галерея.</div>
+  <div class="ssub reveal" data-lang="en">A vibrant environment where children love to learn. Tap any card to open the full gallery.</div>
+
+  <div class="gal-grid reveal" id="gal-grid"></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lb-close" id="lb-close" aria-label="Close">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="16" y2="16"/><line x1="16" y1="4" x2="4" y2="16"/></svg>
+  </button>
+  <button class="lb-arrow lb-prev" id="lb-prev" aria-label="Previous">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,18 9,12 15,6"/></svg>
+  </button>
+  <button class="lb-arrow lb-next" id="lb-next" aria-label="Next">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,18 15,12 9,6"/></svg>
+  </button>
+  <div class="lb-stage" id="lb-stage"></div>
+  <div class="lb-footer">
+    <div class="lb-title" id="lb-title"></div>
+    <div class="lb-counter" id="lb-counter"></div>
+  </div>
+</div>
+
+<!-- VIDEO MODAL (mirrors hero-video-wrap content) -->
+<div class="vid-modal" id="vid-modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="vid-modal-close" id="vid-modal-close" aria-label="Close">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="16" y2="16"/><line x1="16" y1="4" x2="4" y2="16"/></svg>
+  </button>
+  <div class="vid-modal-stage">
+    <div class="hero-video-inner">
+      <svg width="52" height="52" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="22" stroke="#2A8DC9" stroke-width="2"/><polygon points="21,18 38,26 21,34" fill="#2A8DC9" opacity=".5"/></svg>
+      <span data-lang="ru">Вставьте вертикальное<br>видео вашего сада<br>(формат 9:16)</span>
+      <span data-lang="en">Insert your kindergarten<br>vertical video here<br>(9:16 format)</span>
+    </div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<section class="sec sec-alt" id="schedule">
+  <div class="tag reveal" style="text-align:center;" data-lang="ru">Расписание</div>
+  <div class="tag reveal" style="text-align:center;" data-lang="en">Daily Schedule</div>
+  <div class="sh2 reveal" style="text-align:center;" data-lang="ru">Как устроен <em>день в саду</em></div>
+  <div class="sh2 reveal" style="text-align:center;" data-lang="en">How <em>a day works</em></div>
+  <div class="ssub reveal" style="text-align:center;margin-left:auto;margin-right:auto;" data-lang="ru">Выберите группу — расписание разное для малышей и детей постарше</div>
+  <div class="ssub reveal" style="text-align:center;margin-left:auto;margin-right:auto;" data-lang="en">Select a group — the schedule differs for younger and older children</div>
+  <div class="sched-tabs reveal">
+    <button class="sched-tab active" onclick="switchTab(this,'junior')">
+      <span data-lang="ru">Младшая группа</span><span data-lang="en">Junior Group</span>
+    </button>
+    <button class="sched-tab" onclick="switchTab(this,'senior')">
+      <span data-lang="ru">Старшая группа</span><span data-lang="en">Senior Group</span>
+    </button>
+  </div>
+
+  <!-- JUNIOR -->
+  <div class="sched-panel active reveal" id="panel-junior">
+    <div class="sched-mobile"><div class="vtl">
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">09:00 — 09:45</div>
+        <div class="vtl-title" data-lang="ru">Занятия по программе</div><div class="vtl-title" data-lang="en">Curriculum activities</div>
+        <div class="vtl-desc" data-lang="ru">Мир вокруг нас, основы математики</div><div class="vtl-desc" data-lang="en">World around us, introduction to maths</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">09:45 — 10:00</div>
+        <div class="vtl-title" data-lang="ru">🍳 Завтрак</div><div class="vtl-title" data-lang="en">🍳 Breakfast</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:00 — 10:45</div>
+        <div class="vtl-title" data-lang="ru">English каждый день 🇬🇧</div><div class="vtl-title" data-lang="en">English every day 🇬🇧</div>
+        <div class="vtl-desc" data-lang="ru">Педагог-носитель из Великобритании</div><div class="vtl-desc" data-lang="en">Native teacher from the United Kingdom</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:50 — 11:35</div>
+        <div class="vtl-title" data-lang="ru">Обучение грамоте</div><div class="vtl-title" data-lang="en">Literacy &amp; Reading</div>
+        <div class="vtl-desc" data-lang="ru">Чтение и письмо — через день</div><div class="vtl-desc" data-lang="en">Reading and writing — alternating days</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:00 — 12:30</div>
+        <div class="vtl-title" data-lang="ru">🥗 Обед</div><div class="vtl-title" data-lang="en">🥗 Lunch</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:30 — 15:00</div>
+        <div class="vtl-title" data-lang="ru">😴 Тихий час</div><div class="vtl-title" data-lang="en">😴 Quiet time / Nap</div>
+        <div class="vtl-desc" data-lang="ru">Младшая группа спит</div><div class="vtl-desc" data-lang="en">Junior group rests</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">15:00 — 15:15</div>
+        <div class="vtl-title" data-lang="ru">🍎 Полдник</div><div class="vtl-title" data-lang="en">🍎 Afternoon snack</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:15 — 15:50</div>
+        <div class="vtl-title" data-lang="ru">Физкультура и плавание</div><div class="vtl-title" data-lang="en">PE &amp; Swimming</div>
+        <div class="vtl-desc" data-lang="ru">PE и Swimming чередуются</div><div class="vtl-desc" data-lang="en">PE and Swimming alternate</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:50 — 16:20</div>
+        <div class="vtl-title" data-lang="ru">Творчество и музыка</div><div class="vtl-title" data-lang="en">Creative arts &amp; Music</div>
+        <div class="vtl-desc">Arts &amp; Crafts, Music, Cooking Class</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">16:20 — 17:00</div>
+        <div class="vtl-title" data-lang="ru">Логопед / Развитие речи / Стихи и сказки</div>
+        <div class="vtl-title" data-lang="en">Speech therapy / Storytelling / Rhymes</div>
+      </div>
+    </div></div>
+    <div class="sched-desktop">
+      <div class="vtl">
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">09:00 — 09:45</div>
+          <div class="vtl-title" data-lang="ru">Занятия по программе</div><div class="vtl-title" data-lang="en">Curriculum activities</div>
+          <div class="vtl-desc" data-lang="ru">Мир вокруг нас, основы математики</div><div class="vtl-desc" data-lang="en">World around us, introduction to maths</div>
+        </div>
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">09:45 — 10:00</div>
+          <div class="vtl-title" data-lang="ru">🍳 Завтрак</div><div class="vtl-title" data-lang="en">🍳 Breakfast</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:00 — 10:45</div>
+          <div class="vtl-title" data-lang="ru">English каждый день 🇬🇧</div><div class="vtl-title" data-lang="en">English every day 🇬🇧</div>
+          <div class="vtl-desc" data-lang="ru">Педагог-носитель из Великобритании</div><div class="vtl-desc" data-lang="en">Native teacher from the United Kingdom</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:50 — 11:35</div>
+          <div class="vtl-title" data-lang="ru">Обучение грамоте</div><div class="vtl-title" data-lang="en">Literacy &amp; Reading</div>
+          <div class="vtl-desc" data-lang="ru">Чтение и письмо — через день</div><div class="vtl-desc" data-lang="en">Reading and writing — alternating days</div>
+        </div>
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:00 — 12:30</div>
+          <div class="vtl-title" data-lang="ru">🥗 Обед</div><div class="vtl-title" data-lang="en">🥗 Lunch</div>
+        </div>
+      </div>
+      <div class="sched-divider"></div>
+      <div class="vtl">
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:30 — 15:00</div>
+          <div class="vtl-title" data-lang="ru">😴 Тихий час</div><div class="vtl-title" data-lang="en">😴 Quiet time / Nap</div>
+          <div class="vtl-desc" data-lang="ru">Младшая группа спит</div><div class="vtl-desc" data-lang="en">Junior group rests</div>
+        </div>
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">15:00 — 15:15</div>
+          <div class="vtl-title" data-lang="ru">🍎 Полдник</div><div class="vtl-title" data-lang="en">🍎 Afternoon snack</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:15 — 15:50</div>
+          <div class="vtl-title" data-lang="ru">Физкультура и плавание</div><div class="vtl-title" data-lang="en">PE &amp; Swimming</div>
+          <div class="vtl-desc" data-lang="ru">PE и Swimming чередуются</div><div class="vtl-desc" data-lang="en">PE and Swimming alternate</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:50 — 16:20</div>
+          <div class="vtl-title" data-lang="ru">Творчество и музыка</div><div class="vtl-title" data-lang="en">Creative arts &amp; Music</div>
+          <div class="vtl-desc">Arts &amp; Crafts, Music, Cooking Class</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">16:20 — 17:00</div>
+          <div class="vtl-title" data-lang="ru">Логопед / Развитие речи / Стихи и сказки</div>
+          <div class="vtl-title" data-lang="en">Speech therapy / Storytelling / Rhymes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SENIOR -->
+  <div class="sched-panel" id="panel-senior">
+    <div class="sched-mobile"><div class="vtl">
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">09:00 — 10:00</div>
+        <div class="vtl-title" data-lang="ru">Занятия по программе</div><div class="vtl-title" data-lang="en">Curriculum activities</div>
+        <div class="vtl-desc" data-lang="ru">Thai Culture, основы математики — чередуются по дням</div><div class="vtl-desc" data-lang="en">Thai Culture, maths fundamentals — alternating days</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">10:00 — 10:25</div>
+        <div class="vtl-title" data-lang="ru">🍳 Завтрак + прогулка</div><div class="vtl-title" data-lang="en">🍳 Breakfast + outdoor walk</div>
+        <div class="vtl-desc" data-lang="ru">Русско-европейское меню из собственной кухни</div><div class="vtl-desc" data-lang="en">Russian-European menu from our own kitchen</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:25 — 11:10</div>
+        <div class="vtl-title" data-lang="ru">Английский блок</div><div class="vtl-title" data-lang="en">English block</div>
+        <div class="vtl-desc" data-lang="ru">Drama, плавание, Music или Phonics — каждый день разное</div><div class="vtl-desc" data-lang="en">Drama, swimming, Music or Phonics — different each day</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">11:15 — 12:35</div>
+        <div class="vtl-title" data-lang="ru">Развитие и творчество</div><div class="vtl-title" data-lang="en">Development &amp; creativity</div>
+        <div class="vtl-desc" data-lang="ru">Arts &amp; Crafts, English Speaking Club, Cooking Class, Развитие речи</div>
+        <div class="vtl-desc" data-lang="en">Arts &amp; Crafts, English Speaking Club, Cooking Class, speech development</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:35 — 13:05</div>
+        <div class="vtl-title" data-lang="ru">🥗 Обед + прогулка на свежем воздухе</div><div class="vtl-title" data-lang="en">🥗 Lunch + fresh air walk</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">13:05 — 14:45</div>
+        <div class="vtl-title" data-lang="ru">English Reading Club + активный блок</div><div class="vtl-title" data-lang="en">English Reading Club + active block</div>
+        <div class="vtl-desc" data-lang="ru">Плавание, PE, Oxford Phonics — чередуются</div><div class="vtl-desc" data-lang="en">Swimming, PE, Oxford Phonics — rotating</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:00 — 15:45</div>
+        <div class="vtl-title" data-lang="ru">Фонетика и письмо</div><div class="vtl-title" data-lang="en">Phonics &amp; writing</div>
+        <div class="vtl-desc">Oxford Phonics, Thai Culture, English Phonics Writing</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">15:45 — 16:15</div>
+        <div class="vtl-title" data-lang="ru">🍎 Полдник + игры</div><div class="vtl-title" data-lang="en">🍎 Snack + free play</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">16:15 — 17:00</div>
+        <div class="vtl-title" data-lang="ru">Логопед / Clay Workshop / Творческая мастерская</div>
+        <div class="vtl-title" data-lang="en">Speech therapy / Clay Workshop / Creative studio</div>
+      </div>
+    </div></div>
+    <div class="sched-desktop">
+      <div class="vtl">
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">09:00 — 10:00</div>
+          <div class="vtl-title" data-lang="ru">Занятия по программе</div><div class="vtl-title" data-lang="en">Curriculum activities</div>
+          <div class="vtl-desc" data-lang="ru">Thai Culture, основы математики — чередуются по дням</div><div class="vtl-desc" data-lang="en">Thai Culture, maths fundamentals — alternating days</div>
+        </div>
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">10:00 — 10:25</div>
+          <div class="vtl-title" data-lang="ru">🍳 Завтрак + прогулка</div><div class="vtl-title" data-lang="en">🍳 Breakfast + outdoor walk</div>
+          <div class="vtl-desc" data-lang="ru">Русско-европейское меню из собственной кухни</div><div class="vtl-desc" data-lang="en">Russian-European menu from our own kitchen</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:25 — 11:10</div>
+          <div class="vtl-title" data-lang="ru">Английский блок</div><div class="vtl-title" data-lang="en">English block</div>
+          <div class="vtl-desc" data-lang="ru">Drama, плавание, Music или Phonics — каждый день разное</div><div class="vtl-desc" data-lang="en">Drama, swimming, Music or Phonics — different each day</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">11:15 — 12:35</div>
+          <div class="vtl-title" data-lang="ru">Развитие и творчество</div><div class="vtl-title" data-lang="en">Development &amp; creativity</div>
+          <div class="vtl-desc" data-lang="ru">Arts &amp; Crafts, English Speaking Club, Cooking Class, Развитие речи</div>
+          <div class="vtl-desc" data-lang="en">Arts &amp; Crafts, English Speaking Club, Cooking Class, speech development</div>
+        </div>
+      </div>
+      <div class="sched-divider"></div>
+      <div class="vtl">
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:35 — 13:05</div>
+          <div class="vtl-title" data-lang="ru">🥗 Обед + прогулка на свежем воздухе</div><div class="vtl-title" data-lang="en">🥗 Lunch + fresh air walk</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">13:05 — 14:45</div>
+          <div class="vtl-title" data-lang="ru">English Reading Club + активный блок</div><div class="vtl-title" data-lang="en">English Reading Club + active block</div>
+          <div class="vtl-desc" data-lang="ru">Плавание, PE, Oxford Phonics — чередуются</div><div class="vtl-desc" data-lang="en">Swimming, PE, Oxford Phonics — rotating</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:00 — 15:45</div>
+          <div class="vtl-title" data-lang="ru">Фонетика и письмо</div><div class="vtl-title" data-lang="en">Phonics &amp; writing</div>
+          <div class="vtl-desc">Oxford Phonics, Thai Culture, English Phonics Writing</div>
+        </div>
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">15:45 — 16:15</div>
+          <div class="vtl-title" data-lang="ru">🍎 Полдник + игры</div><div class="vtl-title" data-lang="en">🍎 Snack + free play</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">16:15 — 17:00</div>
+          <div class="vtl-title" data-lang="ru">Логопед / Clay Workshop / Творческая мастерская</div>
+          <div class="vtl-title" data-lang="en">Speech therapy / Clay Workshop / Creative studio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOD / NUTRITION -->
+<section class="sec sec-white" id="food">
+  <div class="tag reveal" data-lang="ru">Питание</div>
+  <div class="tag reveal" data-lang="en">Nutrition</div>
+  <div class="sh2 reveal" data-lang="ru">На чём держится <em>наше меню</em></div>
+  <div class="sh2 reveal" data-lang="en">What our <em>menu stands on</em></div>
+  <div class="ssub reveal" data-lang="ru">Четыре принципа, по которым мы кормим детей каждый день — без компромиссов. Наведите на карточку, чтобы узнать подробнее.</div>
+  <div class="ssub reveal" data-lang="en">Four principles behind every meal we serve — no compromises. Hover a card to read more.</div>
+
+  <div class="food-grid reveal">
+    <!-- 1 -->
+    <div class="food-card c1" onclick="this.classList.toggle('is-flipped')">
+      <div class="food-card-inner">
+        <div class="food-face food-front">
+          <div class="food-photo">
+            <div class="food-photo-ph">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="3" y="6" width="26" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 22l7-6 6 5 5-4 8 7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              <span data-lang="ru">ФОТО · ОБЕД</span><span data-lang="en">PHOTO · LUNCH</span>
+            </div>
+            <div class="food-icon">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4c-1.2 2 1 3 0 6"/><path d="M16 3c-1.2 2.5 1 3.5 0 6.5"/><path d="M21 4c-1.2 2 1 3 0 6"/><path d="M3 14h26"/><path d="M5 14c0 7 5 12 11 12s11-5 11-12"/>
+              </svg>
+            </div>
+          </div>
+          <div class="food-text-area">
+            <div class="food-title" data-lang="ru">Привычная домашняя еда</div>
+            <div class="food-title" data-lang="en">Familiar home-style food</div>
+            <div class="food-hint">
+              <span data-lang="ru">Подробнее</span><span data-lang="en">Read more</span>
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 1l4.5 4.5L6 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="food-face food-back">
+          <div class="food-back-eyebrow" data-lang="ru">Принцип 01</div>
+          <div class="food-back-eyebrow" data-lang="en">Principle 01</div>
+          <div class="food-back-text" data-lang="ru">Русско-европейская кухня: борщи, котлеты, паста, супы, каши. Никакого острого карри или сладкого риса с манго. Ребёнок ест то, что любил дома.</div>
+          <div class="food-back-text" data-lang="en">Russian-European cuisine: borscht, cutlets, pasta, soups, porridge. No spicy curry or sweet mango rice. Children eat the kind of food they grew up with.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="food-card c2" onclick="this.classList.toggle('is-flipped')">
+      <div class="food-card-inner">
+        <div class="food-face food-front">
+          <div class="food-photo">
+            <div class="food-photo-ph">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="3" y="6" width="26" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 22l7-6 6 5 5-4 8 7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              <span data-lang="ru">ФОТО · КУХНЯ</span><span data-lang="en">PHOTO · KITCHEN</span>
+            </div>
+            <div class="food-icon">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18h14v8a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2v-8z"/><path d="M9 18c-3 0-5-2-5-5s3-5 6-4c.5-3 3-5 6-5s5.5 2 6 5c3-1 6 1 6 4s-2 5-5 5"/><line x1="13.5" y1="19" x2="13.5" y2="27"/><line x1="18.5" y1="19" x2="18.5" y2="27"/>
+              </svg>
+            </div>
+          </div>
+          <div class="food-text-area">
+            <div class="food-title" data-lang="ru">Готовим у себя</div>
+            <div class="food-title" data-lang="en">Cooked on-site</div>
+            <div class="food-hint">
+              <span data-lang="ru">Подробнее</span><span data-lang="en">Read more</span>
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 1l4.5 4.5L6 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="food-face food-back">
+          <div class="food-back-eyebrow" data-lang="ru">Принцип 02</div>
+          <div class="food-back-eyebrow" data-lang="en">Principle 02</div>
+          <div class="food-back-text" data-lang="ru">4 приёма пищи в день — завтрак, обед, полдник и второй полдник. Всё свежее, готовится утром нашим поваром на собственной кухне. Никакого кейтеринга и заморозок.</div>
+          <div class="food-back-text" data-lang="en">Four meals a day — breakfast, lunch, afternoon snack, and a second snack. Everything is fresh and cooked each morning by our own chef. No catering, no frozen meals.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="food-card c3" onclick="this.classList.toggle('is-flipped')">
+      <div class="food-card-inner">
+        <div class="food-face food-front">
+          <div class="food-photo">
+            <div class="food-photo-ph">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="3" y="6" width="26" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 22l7-6 6 5 5-4 8 7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              <span data-lang="ru">ФОТО · ПРОДУКТЫ</span><span data-lang="en">PHOTO · PRODUCE</span>
+            </div>
+            <div class="food-icon">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 11c-2-1-4-1.5-6-1.5C7 9.5 4 12 4 17s4 11 8 11c1 0 2-.4 4-.4s3 .4 4 .4c4 0 8-6 8-11s-3-7.5-6-7.5c-2 0-4 .5-6 1.5z"/><path d="M16 11c0-3 2-6 6-6.5"/><path d="M16 11v3"/>
+              </svg>
+            </div>
+          </div>
+          <div class="food-text-area">
+            <div class="food-title" data-lang="ru">Чистый состав</div>
+            <div class="food-title" data-lang="en">Clean ingredients</div>
+            <div class="food-hint">
+              <span data-lang="ru">Подробнее</span><span data-lang="en">Read more</span>
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 1l4.5 4.5L6 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="food-face food-back">
+          <div class="food-back-eyebrow" data-lang="ru">Принцип 03</div>
+          <div class="food-back-eyebrow" data-lang="en">Principle 03</div>
+          <div class="food-back-text" data-lang="ru">Никаких сосисок, газировки, конфет и красителей. Свежие фрукты, домашние компоты, запеканки, цельные крупы. Только то, что мы сами дали бы своим детям.</div>
+          <div class="food-back-text" data-lang="en">No sausages, soda, sweets, or food colourings. Fresh fruit, homemade compote, casseroles, whole grains. Only what we would feed our own children.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="food-card c4" onclick="this.classList.toggle('is-flipped')">
+      <div class="food-card-inner">
+        <div class="food-face food-front">
+          <div class="food-photo">
+            <div class="food-photo-ph">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="3" y="6" width="26" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="14" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 22l7-6 6 5 5-4 8 7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              <span data-lang="ru">ФОТО · ДЕТИ</span><span data-lang="en">PHOTO · CHILDREN</span>
+            </div>
+            <div class="food-icon">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 27.5s-11-7-11-15.5c0-4 3-7 7-7 2 0 3 1 4 2 1-1 2-2 4-2 4 0 7 3 7 7 0 8.5-11 15.5-11 15.5z"/><path d="M11 14.5l4 4 7-7"/>
+              </svg>
+            </div>
+          </div>
+          <div class="food-text-area">
+            <div class="food-title" data-lang="ru">Учитываем предпочтения семьи</div>
+            <div class="food-title" data-lang="en">Tailored to your family</div>
+            <div class="food-hint">
+              <span data-lang="ru">Подробнее</span><span data-lang="en">Read more</span>
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5h9M6 1l4.5 4.5L6 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="food-face food-back">
+          <div class="food-back-eyebrow" data-lang="ru">Принцип 04</div>
+          <div class="food-back-eyebrow" data-lang="en">Principle 04</div>
+          <div class="food-back-text" data-lang="ru">Без свинины, без глютена, без лактозы, без аллергенов — подстраиваем меню под особенности каждого ребёнка. Расскажите нам — и мы это учтём с первого дня.</div>
+          <div class="food-back-text" data-lang="en">Pork-free, gluten-free, lactose-free, allergen-aware — we adjust the menu to each child's needs. Tell us, and we will account for it from day one.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec sec-yellow" id="reviews">
+  <div class="tag reveal" data-lang="ru">Отзывы</div>
+  <div class="tag reveal" data-lang="en">Reviews</div>
+  <div class="sh2 reveal" data-lang="ru">Родители <em>доверяют нам</em></div>
+  <div class="sh2 reveal" data-lang="en">Parents <em>trust us</em></div>
+
+  <div class="rev-bento reveal">
+    <!-- VIDEO TESTIMONIAL -->
+    <div class="rb-video">
+      <div class="rb-video-ph">
+        <div class="rb-play">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="white"><polygon points="9,6 23,14 9,22"/></svg>
+        </div>
+        <div class="rb-video-label" data-lang="ru">ВИДЕО-ОТЗЫВ · 0:45</div>
+        <div class="rb-video-label" data-lang="en">VIDEO REVIEW · 0:45</div>
+        <div class="rb-video-sub" data-lang="ru">Юлия, мама Мии · 4 года в саду</div>
+        <div class="rb-video-sub" data-lang="en">Julia, Mia's mum · 4 years with us</div>
+      </div>
+      <div class="rb-video-quote">
+        <div data-lang="ru">«За 4 года Мия выросла с нами. Английский — как родной, к школе была готова за полгода до неё»</div>
+        <div data-lang="en">"In 4 years, Mia has grown up with us. Her English is native-level, and she was ready for school 6 months early."</div>
+      </div>
+    </div>
+
+    <!-- WHATSAPP SCREENSHOT -->
+    <div class="rb-wa">
+      <div class="rb-wa-header">
+        <div class="rb-wa-av">О</div>
+        <div>
+          <div class="rb-wa-name">Ольга М.</div>
+          <div class="rb-wa-status" data-lang="ru">был(а) сегодня</div>
+          <div class="rb-wa-status" data-lang="en">last seen today</div>
+        </div>
+        <div class="rb-wa-icons">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#5A6A85"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.58l2.2-2.21c.28-.27.36-.66.25-1.01C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#5A6A85"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+        </div>
+      </div>
+      <div class="rb-wa-body">
+        <div class="rb-wa-msg rb-wa-in">
+          <span data-lang="ru">Спасибо за прошедший месяц! Тимур каждое утро бежит в сад 🥹</span>
+          <span data-lang="en">Thank you for this month! Timur runs to kindergarten every morning 🥹</span>
+          <span class="rb-wa-time">9:14</span>
+        </div>
+        <div class="rb-wa-msg rb-wa-in">
+          <span data-lang="ru">Это уже 4-й сад на острове и наконец-то идеальный 🙏</span>
+          <span data-lang="en">This is our 4th kindergarten on the island and finally — the perfect one 🙏</span>
+          <span class="rb-wa-time">9:14</span>
+        </div>
+        <div class="rb-wa-msg rb-wa-in">
+          <span data-lang="ru">Бассейн, английский, тайская культура — у вас всё в одном месте ❤️</span>
+          <span data-lang="en">Pool, English, Thai culture — you have everything in one place ❤️</span>
+          <span class="rb-wa-time">9:15</span>
+        </div>
+      </div>
+      <div class="rb-wa-source">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l4.93-1.38C8.42 21.5 10.15 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+        <span data-lang="ru">скриншот из WhatsApp · реальное сообщение</span>
+        <span data-lang="en">WhatsApp screenshot · real message</span>
+      </div>
+    </div>
+
+    <!-- TEXT REVIEW 1 with photo -->
+    <div class="rb-text rb-text-1">
+      <div class="rb-text-outcome" data-lang="ru">3 месяца · заговорил на английском</div>
+      <div class="rb-text-outcome" data-lang="en">3 months · started speaking English</div>
+      <div class="rb-stars">★★★★★</div>
+      <div class="rb-text-body" data-lang="ru">«Самый лучший садик на острове! Таких отзывчивых воспитателей не встречали. Каждый раз приходим как на праздник.»</div>
+      <div class="rb-text-body" data-lang="en">"The best kindergarten on the island! We've never met such caring teachers. Every day feels like a celebration."</div>
+      <div class="rb-text-author">
+        <div class="rb-text-avatar" style="background:#4BAEE8;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        </div>
+        <div>
+          <div class="rb-text-name" data-lang="ru">Юлия Воробьёва</div>
+          <div class="rb-text-name" data-lang="en">Julia Vorobyova</div>
+          <div class="rb-text-sub" data-lang="ru">мама Мии · 4 года</div>
+          <div class="rb-text-sub" data-lang="en">Mia's mum · age 4</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEXT REVIEW 2 with photo -->
+    <div class="rb-text rb-text-2">
+      <div class="rb-text-outcome" data-lang="ru">6 месяцев · перестал плакать утром</div>
+      <div class="rb-text-outcome" data-lang="en">6 months · no more morning tears</div>
+      <div class="rb-stars">★★★★★</div>
+      <div class="rb-text-body" data-lang="ru">«Меню русско-европейское — дети едят привычную еду, а не сладкий рис с манго. Иван — обожаем детьми.»</div>
+      <div class="rb-text-body" data-lang="en">"The menu is Russian-European — familiar food, not sweet mango rice. Ivan is adored by all the kids."</div>
+      <div class="rb-text-author">
+        <div class="rb-text-avatar" style="background:#9B87D8;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        </div>
+        <div>
+          <div class="rb-text-name" data-lang="ru">Людмила Виноградова</div>
+          <div class="rb-text-name" data-lang="en">Lyudmila Vinogradova</div>
+          <div class="rb-text-sub" data-lang="ru">мама Дани и Ани</div>
+          <div class="rb-text-sub" data-lang="en">Danya &amp; Anya's mum</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEXT REVIEW 3 with photo -->
+    <div class="rb-text rb-text-3">
+      <div class="rb-text-outcome" data-lang="ru">2 года · готов к школе на 6 мес. раньше</div>
+      <div class="rb-text-outcome" data-lang="en">2 years · school-ready 6 mo. early</div>
+      <div class="rb-stars">★★★★★</div>
+      <div class="rb-text-body" data-lang="ru">«Русская и английская программа, бассейн, йога, тайская культура — всё в одном месте. Ребёнок ждёт понедельника.»</div>
+      <div class="rb-text-body" data-lang="en">"Russian and English programmes, pool, yoga, Thai culture — all in one place. My child looks forward to Monday."</div>
+      <div class="rb-text-author">
+        <div class="rb-text-avatar" style="background:#F9C855;color:#854F0B;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        </div>
+        <div>
+          <div class="rb-text-name" data-lang="ru">Ольга Мустейкис</div>
+          <div class="rb-text-name" data-lang="en">Olga Musteikis</div>
+          <div class="rb-text-sub" data-lang="ru">мама Тимура · 5 лет</div>
+          <div class="rb-text-sub" data-lang="en">Timur's mum · age 5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rev-cta reveal">
+    <a href="https://www.google.com/maps/search/dreamax+kindergarten+phuket" target="_blank" rel="noopener" class="btn-blue">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" opacity=".8"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" opacity=".6"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" opacity=".9"/></svg>
+      <span data-lang="ru">Все 47 отзывов в Google</span><span data-lang="en">All 47 reviews on Google</span>
+    </a>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec sec-alt" id="pricing">
+  <div class="tag reveal" data-lang="ru">Стоимость</div>
+  <div class="tag reveal" data-lang="en">Pricing</div>
+  <div class="sh2 reveal" data-lang="ru"><em>Прозрачные</em> цены</div>
+  <div class="sh2 reveal" data-lang="en"><em>Transparent</em> pricing</div>
+  <div class="ssub reveal" data-lang="ru">Чем дольше — тем выгоднее. Включены питание, бассейн и все занятия.</div>
+  <div class="ssub reveal" data-lang="en">The longer the commitment, the better the value. Meals, pool, and all activities included.</div>
+
+  <div class="calc-wrap reveal">
+    <div class="calc-grid">
+      <button class="calc-btn" onclick="selectPlan(this,9000,'week')">
+        <span class="calc-label" data-lang="ru">1 неделя</span><span class="calc-label" data-lang="en">1 week</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,13500,'month')">
+        <span class="calc-label">Half-day</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,23500,'month')">
+        <span class="calc-label" data-lang="ru">1 месяц</span><span class="calc-label" data-lang="en">1 month</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,22500,'month')">
+        <span class="calc-badge">−4%</span>
+        <span class="calc-label" data-lang="ru">3 месяца</span><span class="calc-label" data-lang="en">3 months</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,20500,'month')">
+        <span class="calc-badge">−13%</span>
+        <span class="calc-label" data-lang="ru">6 месяцев</span><span class="calc-label" data-lang="en">6 months</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,20000,'month')">
+        <span class="calc-badge">−15%</span>
+        <span class="calc-label" data-lang="ru">1 год (ежемес.)</span><span class="calc-label" data-lang="en">1 year (monthly)</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,19500,'month')">
+        <span class="calc-badge">−17%</span>
+        <span class="calc-label" data-lang="ru">1 год (2 платежа)</span><span class="calc-label" data-lang="en">1 year (2 payments)</span>
+      </button>
+      <button class="calc-btn calc-best" onclick="selectPlan(this,18500,'month')">
+        <span class="calc-badge best">🔥 −21%</span>
+        <span class="calc-label" data-lang="ru">1 год (1 платёж)</span><span class="calc-label" data-lang="en">1 year (full pay)</span>
+      </button>
+    </div>
+    <div class="calc-result" id="calc-result">
+      <div class="calc-result-text" data-lang="ru">Выберите период выше</div>
+      <div class="calc-result-text" data-lang="en">Select a plan above</div>
+    </div>
+    <div class="price-note" data-lang="ru">💡 Пробный день — бесплатно. В стоимость включены завтрак, обед, полдник, бассейн и все занятия.</div>
+    <div class="price-note" data-lang="en">💡 Trial day is free. Price includes breakfast, lunch, afternoon snack, pool and all activities.</div>
+    <div class="price-cta">
+      <a href="#apply" class="btn-blue" style="flex:1;justify-content:center;" data-lang="ru">Записаться</a>
+      <a href="#apply" class="btn-blue" style="flex:1;justify-content:center;" data-lang="en">Enrol Now</a>
+      <a href="https://wa.me/66635067812" target="_blank" class="btn-green" style="flex:1;justify-content:center;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.062.522 4.004 1.442 5.7L.055 23.455a.5.5 0 0 0 .611.601l5.861-1.372A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 0 1-5.022-1.379l-.36-.214-3.733.874.898-3.645-.235-.374A9.782 9.782 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+  <script>
+  function selectPlan(btn,price,per){
+    document.querySelectorAll('.calc-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    var lang=document.documentElement.getAttribute('lang')||'ru';
+    var lbl=per==='month'?(lang==='ru'?'мес.':'month'):(lang==='ru'?'нед.':'week');
+    document.getElementById('calc-result').innerHTML='<div class="calc-result-price">'+price.toLocaleString('ru')+' ฿<span class="calc-result-sub"> / '+lbl+'</span></div>';
+    document.getElementById('calc-result').dataset.price=price;
+    document.getElementById('calc-result').dataset.per=per;
+  }
+  </script>
+</section>
+
+<!-- APPLY -->
+<section class="sec sec-white" id="apply">
+  <div class="tag reveal" data-lang="ru">Поступление</div>
+  <div class="tag reveal" data-lang="en">Enrolment</div>
+  <div class="sh2 reveal" data-lang="ru">Как <em>записать ребёнка</em></div>
+  <div class="sh2 reveal" data-lang="en">How to <em>enrol your child</em></div>
+  <div class="ssub reveal" data-lang="ru">Три простых шага — и ваш ребёнок уже в Dreamax</div>
+  <div class="ssub reveal" data-lang="en">Three simple steps — and your child is at Dreamax</div>
+  <div class="apply-grid reveal">
+    <div class="apply-step"><div class="step-circle">✍️</div><div>
+      <div class="step-title" data-lang="ru">Оставьте заявку</div><div class="step-title" data-lang="en">Send an enquiry</div>
+      <div class="step-desc" data-lang="ru">Напишите в WhatsApp или нажмите кнопку. Ответим в течение часа в рабочее время.</div>
+      <div class="step-desc" data-lang="en">Message us on WhatsApp or click the button. We reply within an hour during working hours.</div>
+    </div></div>
+    <div class="apply-step"><div class="step-circle">🏫</div><div>
+      <div class="step-title" data-lang="ru">Придите на экскурсию</div><div class="step-title" data-lang="en">Come for a tour</div>
+      <div class="step-desc" data-lang="ru">Покажем сад, познакомим с педагогами. Ребёнок может провести пробный день бесплатно.</div>
+      <div class="step-desc" data-lang="en">We'll show you around and introduce the teachers. Your child can enjoy a free trial day.</div>
+    </div></div>
+    <div class="apply-step"><div class="step-circle">🎉</div><div>
+      <div class="step-title" data-lang="ru">Подпишем договор</div><div class="step-title" data-lang="en">Sign the agreement</div>
+      <div class="step-desc" data-lang="ru">Оформим документы и определим дату начала. Всё быстро и без лишней бюрократии.</div>
+      <div class="step-desc" data-lang="en">We handle the paperwork and agree on a start date. Quick, simple, no unnecessary red tape.</div>
+    </div></div>
+  </div>
+  <div class="contact-box reveal">
+    <div>
+      <h4 data-lang="ru">Остались вопросы?</h4><h4 data-lang="en">Have questions?</h4>
+      <p data-lang="ru">Напишите нам — ответим быстро и честно</p>
+      <p data-lang="en">Write to us — we'll reply quickly and honestly</p>
+    </div>
+    <div class="contact-btns">
+      <a href="https://wa.me/66635067812" target="_blank" class="btn-green">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.062.522 4.004 1.442 5.7L.055 23.455a.5.5 0 0 0 .611.601l5.861-1.372A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 0 1-5.022-1.379l-.36-.214-3.733.874.898-3.645-.235-.374A9.782 9.782 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        +66 635 067 812
+      </a>
+      <a href="mailto:dreamaxcamp@gmail.com" class="btn-email">✉️ dreamaxcamp@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-yellow" id="faq">
+  <div class="tag reveal" style="text-align:center;" data-lang="ru">FAQ</div>
+  <div class="tag reveal" style="text-align:center;" data-lang="en">FAQ</div>
+  <div class="sh2 reveal" style="text-align:center;" data-lang="ru">Отвечаем <em>честно</em></div>
+  <div class="sh2 reveal" style="text-align:center;" data-lang="en">Honest <em>answers</em></div>
+  <div class="faq-list reveal">
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">С какого возраста принимаете детей?</span><span data-lang="en">What is the minimum age for enrolment?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Принимаем детей от 2,5 до 6 лет. Если ребёнку уже 6 лет, мы проводим диагностику и можем направить в первый класс вместо садика — решение принимается совместно с родителями.</div>
+      <div class="faq-a-in" data-lang="en">We accept children from 2.5 to 6 years old. If a child is already 6, we run an assessment and may recommend Year 1 instead — this decision is always made together with the parents.</div>
+    </div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">Какое время работы?</span><span data-lang="en">What are your opening hours?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Основное время — с 09:00 до 17:00, понедельник–пятница. Ранний приём и поздний уход — по договорённости с администратором.</div>
+      <div class="faq-a-in" data-lang="en">Core hours are 09:00–17:00, Monday to Friday. Early drop-off and late pick-up can be arranged with our administrator.</div>
+    </div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">Какое питание в саду?</span><span data-lang="en">What food is served?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Собственная кухня с русским поваром. Меню русско-европейское — привычная для детей еда: никакого острого и экзотического. Завтрак, обед и полдник включены в стоимость полного дня.</div>
+      <div class="faq-a-in" data-lang="en">We have our own kitchen with a Russian chef. The menu is Russian-European — familiar food for children: nothing spicy or exotic. Breakfast, lunch and afternoon snack are included in the full-day price.</div>
+    </div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">Ребёнок не говорит по-английски — это проблема?</span><span data-lang="en">My child doesn't speak English — is that a problem?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Нет. Дети не "учат" английский как предмет — они живут в двуязычной среде. Педагоги из UK общаются через игру и повседневные ситуации. Большинство детей начинают говорить уже через 2–3 месяца.</div>
+      <div class="faq-a-in" data-lang="en">Not at all. Children don't "study" English as a subject — they live in a bilingual environment. UK teachers communicate through play and everyday situations. Most children start speaking within 2–3 months.</div>
+    </div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">Есть ли пробный день?</span><span data-lang="en">Is there a trial day?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Да — после экскурсии приглашаем на бесплатный пробный день. Ребёнок проводит полное время вместе с группой, вы убеждаетесь что ему комфортно. Запись через WhatsApp.</div>
+      <div class="faq-a-in" data-lang="en">Yes — after the tour we invite you for a free trial day. Your child spends a full day with the group so you can see they're comfortable. Book via WhatsApp.</div>
+    </div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">Как обеспечивается безопасность?</span><span data-lang="en">How is safety ensured?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Доступ на территорию только для зарегистрированных родителей и проверенного персонала. Территория огорожена, постоянное наблюдение педагогов. Видеонаблюдение на площадке.</div>
+      <div class="faq-a-in" data-lang="en">Access is restricted to registered parents and verified staff. The grounds are enclosed with constant teacher supervision and CCTV monitoring throughout.</div>
+    </div></div>
+  </div>
+</section>
+
+<!-- FIND US -->
+<section class="findus" id="findus">
+  <div class="findus-container">
+    <div class="findus-header reveal">
+      <div class="tag" data-lang="ru">Где найти</div>
+      <div class="tag" data-lang="en">Find us</div>
+      <div class="sh2" data-lang="ru">Наш сад <em>на Пхукете</em></div>
+      <div class="sh2" data-lang="en">Our kindergarten <em>in Phuket</em></div>
+    </div>
+
+    <div class="findus-card reveal">
+      <div class="findus-info">
+        <div class="findus-info-head">
+          <div class="findus-info-eyebrow" data-lang="ru">Dreamax Kindergarten</div>
+          <div class="findus-info-eyebrow" data-lang="en">Dreamax Kindergarten</div>
+          <h3 data-lang="ru">Приходите <em>в гости</em></h3>
+          <h3 data-lang="en">Come <em>visit us</em></h3>
+        </div>
+
+        <div class="findus-rows">
+          <div class="findus-row">
+            <div class="findus-row-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="findus-row-label" data-lang="ru">Адрес</div>
+              <div class="findus-row-label" data-lang="en">Address</div>
+              <div class="findus-row-value" data-lang="ru">Phuket, Таиланд</div>
+              <div class="findus-row-value" data-lang="en">Phuket, Thailand</div>
+            </div>
+          </div>
+
+          <div class="findus-row">
+            <div class="findus-row-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
+            <div>
+              <div class="findus-row-label" data-lang="ru">Время работы</div>
+              <div class="findus-row-label" data-lang="en">Opening hours</div>
+              <div class="findus-row-value">Пн–Пт · 09:00–17:00</div>
+            </div>
+          </div>
+
+          <div class="findus-row">
+            <div class="findus-row-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="findus-row-label" data-lang="ru">Телефон · WhatsApp</div>
+              <div class="findus-row-label" data-lang="en">Phone · WhatsApp</div>
+              <div class="findus-row-value"><a href="https://wa.me/66635067812">+66 635 067 812</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="findus-btns">
+          <a href="https://maps.app.goo.gl/k3PRNBM5xeDSHHk28" target="_blank" rel="noopener" class="btn-maps">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+            <span data-lang="ru">Открыть в Maps</span><span data-lang="en">Open in Maps</span>
+          </a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Dreamax+Kindergarten+Phuket" target="_blank" rel="noopener" class="btn-route">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,11 13,11 13,3 21,12 13,21 13,13 3,13"/></svg>
+            <span data-lang="ru">Маршрут</span><span data-lang="en">Directions</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="findus-map-side">
+        <iframe class="findus-map" src="https://www.google.com/maps?q=Dreamax+Kindergarten+Phuket&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dreamax Kindergarten on Google Maps"></iframe>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="ft-logo">
+      <div class="ft-logo-icon"><img src="assets/logo.jpg" alt="Dreamax Kindergarten"></div>
+      <div>
+        <div class="ft-logo-name">Dreamax Kindergarten</div>
+        <div class="ft-logo-sub" data-lang="ru">Пхукет · Таиланд</div>
+        <div class="ft-logo-sub" data-lang="en">Phuket · Thailand</div>
+      </div>
+    </div>
+    <div class="ft-tag" data-lang="ru">Международный билингвальный детский сад<br>на Пхукете с 2015 года<br>Лицензия Л035-01211-24/00651032</div>
+    <div class="ft-tag" data-lang="en">International bilingual kindergarten<br>in Phuket since 2015<br>Licence Л035-01211-24/00651032</div>
+  </div>
+  <div class="ft-links">
+    <a href="#programs" data-lang="ru">Программа</a>
+    <a href="#programs" data-lang="en">Programme</a>
+    <a href="#schedule" data-lang="ru">Расписание</a>
+    <a href="#schedule" data-lang="en">Schedule</a>
+    <a href="#pricing" data-lang="ru">Цены</a>
+    <a href="#pricing" data-lang="en">Pricing</a>
+    <a href="#reviews" data-lang="ru">Отзывы</a>
+    <a href="#reviews" data-lang="en">Reviews</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="ft-info">
+    <p data-lang="ru">Таиланд, Пхукет, Чалонг<br>Chaofah Road, 10/12, 83130<br>ПН–ПТ, 09:00 – 17:00<br>dreamaxcamp@gmail.com<br>+66 635 067 812</p>
+    <p data-lang="en">Thailand, Phuket, Chalong<br>Chaofah Road, 10/12, 83130<br>Mon–Fri, 09:00 – 17:00<br>dreamaxcamp@gmail.com<br>+66 635 067 812</p>
+    <div class="ft-copy">© 2025 Dreamax Kindergarten</div>
+  </div>
+</footer>
+
+<script>
+// ── Language system ──────────────────────────────────────────────────
+function setLang(lang){
+  document.documentElement.setAttribute('lang',lang);
+  // desktop buttons
+  document.getElementById('d-ru').classList.toggle('active',lang==='ru');
+  document.getElementById('d-en').classList.toggle('active',lang==='en');
+  // mobile buttons
+  document.getElementById('m-ru').classList.toggle('active',lang==='ru');
+  document.getElementById('m-en').classList.toggle('active',lang==='en');
+  // title
+  document.getElementById('page-title').textContent=lang==='ru'
+    ?'Dreamax Kindergarten — Международный детский сад, Пхукет'
+    :'Dreamax Kindergarten — International Bilingual Kindergarten, Phuket';
+  // re-render calculator result if a plan is selected
+  var cr=document.getElementById('calc-result');
+  if(cr && cr.dataset.price){
+    var price=parseInt(cr.dataset.price,10);
+    var per=cr.dataset.per;
+    var lbl=per==='month'?(lang==='ru'?'мес.':'month'):(lang==='ru'?'нед.':'week');
+    cr.innerHTML='<div class="calc-result-price">'+price.toLocaleString('ru')+' ฿<span class="calc-result-sub"> / '+lbl+'</span></div>';
+  }
+}
+// init — default RU (html[lang="ru"] already set in <html> tag)
+setLang('ru');
+
+// ── Burger / mobile menu ────────────────────────────────────────────
+(function(){
+  var burger = document.getElementById('burger');
+  var mm = document.getElementById('mobile-menu');
+  var bd = document.getElementById('mobile-backdrop');
+  var closeBtn = document.getElementById('mm-close');
+  function openMob(){
+    mm.classList.add('open');
+    bd.classList.add('open');
+    burger.classList.add('open');
+    document.body.classList.add('mm-lock');
+    mm.setAttribute('aria-hidden','false');
+  }
+  window.closeMob = function(){
+    mm.classList.remove('open');
+    bd.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.classList.remove('mm-lock');
+    mm.setAttribute('aria-hidden','true');
+  };
+  burger.addEventListener('click', function(){
+    if(mm.classList.contains('open')) closeMob(); else openMob();
+  });
+  bd.addEventListener('click', closeMob);
+  if(closeBtn) closeBtn.addEventListener('click', closeMob);
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && mm.classList.contains('open')) closeMob();
+  });
+})();
+
+// ── Schedule tabs ───────────────────────────────────────────────────
+function switchTab(btn,group){
+  document.querySelectorAll('.sched-tab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.sched-panel').forEach(function(p){p.classList.remove('active');p.style.display='none';});
+  btn.classList.add('active');
+  var panel=document.getElementById('panel-'+group);
+  panel.classList.add('active');panel.style.display='';
+}
+
+// ── FAQ ─────────────────────────────────────────────────────────────
+function toggleFaq(btn){
+  var item=btn.closest('.faq-item');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){
+    i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a').scrollHeight+'px';
+  }
+}
+
+// ── Reveal ──────────────────────────────────────────────────────────
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(function(r){obs.observe(r);});
+
+// ── Gallery: multi-photo cycling + lightbox ────────────────────────
+var GALLERY = {
+  classes: {
+    ru:'Занятия', en:'Classes',
+    bg:'#C8E4F5', color:'#185FA5',
+    photos:['Урок · Phonics','Чтение','Математика','Развитие речи','Drama']
+  },
+  pool: {
+    ru:'Бассейн', en:'Pool',
+    bg:'#A8DCF5', color:'#0E5687',
+    photos:['Утреннее плавание','Урок с инструктором','Игры на воде','Старшая группа']
+  },
+  celebrations: {
+    ru:'Праздники', en:'Celebrations',
+    bg:'#FAE8A0', color:'#7A5200',
+    photos:['Новый год','День рождения','Halloween','Songkran','Выпускной']
+  },
+  interior: {
+    ru:'Интерьер', en:'Interior',
+    bg:'#F5CCE0', color:'#8B3060',
+    photos:['Игровая комната','Класс English','Спальня','Творческая мастерская']
+  },
+  outdoor: {
+    ru:'Прогулки', en:'Outdoors',
+    bg:'#C9F0E0', color:'#1A6B4A',
+    photos:['Игровая площадка','Прогулка в парк','Спортивные игры','Тайская культура']
+  },
+  menu: {
+    ru:'Меню', en:'Menu',
+    bg:'#FFE4CC', color:'#9A4A00',
+    photos:['Завтрак','Обед','Полдник','Фрукты','Домашний компот']
+  }
+};
+
+var GAL_KEYS = ['classes','pool','celebrations','interior','outdoor','menu'];
+
+function svgCamera(){
+  return '<svg width="38" height="38" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="28" height="22" rx="3"/><circle cx="16" cy="17" r="6"/><circle cx="24" cy="11" r="1.5" fill="currentColor"/></svg>';
+}
+
+function buildGallery(){
+  var grid = document.getElementById('gal-grid');
+  if(!grid) return;
+  var lang = document.documentElement.getAttribute('lang') || 'ru';
+  grid.innerHTML = '';
+  GAL_KEYS.forEach(function(key){
+    var cat = GALLERY[key];
+    var item = document.createElement('div');
+    item.className = 'gal-item';
+    if(key === 'menu') item.classList.add('gal-menu-item');
+    item.setAttribute('data-cat', key);
+    item.onclick = function(){ openLightbox(key, getActiveSlide(item)); };
+
+    var slidesHtml = cat.photos.map(function(label, i){
+      return '<div class="gal-slide'+(i===0?' active':'')+'" style="background:'+cat.bg+';color:'+cat.color+';">'
+        + svgCamera()
+        + '<div class="gal-slide-label">'+ label +'</div>'
+        + '</div>';
+    }).join('');
+
+    var dotsHtml = cat.photos.map(function(_, i){
+      return '<span'+(i===0?' class="active"':'')+'></span>';
+    }).join('');
+
+    item.innerHTML =
+      '<div class="gal-slides">'+ slidesHtml +'</div>'
+      + '<div class="gal-label"><span data-lang="ru">'+ cat.ru +'</span><span data-lang="en">'+ cat.en +'</span></div>'
+      + '<div class="gal-count">'
+      +   '<svg width="11" height="11" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="3" width="11" height="8.5" rx="1.5"/><circle cx="7" cy="7" r="2.2"/></svg>'
+      +   ' '+ cat.photos.length
+      + '</div>'
+      + '<div class="gal-dots">'+ dotsHtml +'</div>';
+
+    grid.appendChild(item);
+  });
+}
+
+function getActiveSlide(item){
+  var slides = item.querySelectorAll('.gal-slide');
+  for(var i=0;i<slides.length;i++) if(slides[i].classList.contains('active')) return i;
+  return 0;
+}
+
+function cycleGallery(){
+  document.querySelectorAll('.gal-item').forEach(function(item){
+    var slides = item.querySelectorAll('.gal-slide');
+    var dots = item.querySelectorAll('.gal-dots span');
+    if(slides.length < 2) return;
+    var active = getActiveSlide(item);
+    var next = (active + 1) % slides.length;
+    slides[active].classList.remove('active');
+    if(dots[active]) dots[active].classList.remove('active');
+    slides[next].classList.add('active');
+    if(dots[next]) dots[next].classList.add('active');
+  });
+}
+
+// ── Lightbox ───────────────────────────────────────────────────────
+var LB_state = { cat:null, idx:0 };
+
+function openLightbox(cat, idx){
+  LB_state.cat = cat;
+  LB_state.idx = idx || 0;
+  renderLightbox();
+  var lb = document.getElementById('lightbox');
+  lb.classList.add('open');
+  lb.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  var lb = document.getElementById('lightbox');
+  lb.classList.remove('open');
+  lb.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+}
+function lbNav(dir){
+  var cat = GALLERY[LB_state.cat];
+  if(!cat) return;
+  LB_state.idx = (LB_state.idx + dir + cat.photos.length) % cat.photos.length;
+  renderLightbox();
+}
+function renderLightbox(){
+  var cat = GALLERY[LB_state.cat];
+  if(!cat) return;
+  var lang = document.documentElement.getAttribute('lang') || 'ru';
+  var label = cat.photos[LB_state.idx];
+  var stage = document.getElementById('lb-stage');
+  stage.innerHTML =
+    '<div class="lb-photo" style="background:'+cat.bg+';color:'+cat.color+';">'
+    + '<svg width="64" height="64" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="28" height="22" rx="3"/><circle cx="16" cy="17" r="6"/><circle cx="24" cy="11" r="1.5" fill="currentColor"/></svg>'
+    + '<div class="lb-photo-label">'+ label +'</div>'
+    + '</div>';
+  document.getElementById('lb-title').textContent = lang==='ru' ? cat.ru : cat.en;
+  document.getElementById('lb-counter').textContent = (LB_state.idx+1) + ' / ' + cat.photos.length;
+}
+
+// Wire up lightbox controls
+(function(){
+  var lb = document.getElementById('lightbox');
+  if(!lb) return;
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', function(e){ e.stopPropagation(); lbNav(-1); });
+  document.getElementById('lb-next').addEventListener('click', function(e){ e.stopPropagation(); lbNav(1); });
+  lb.addEventListener('click', function(e){ if(e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') lbNav(-1);
+    if(e.key === 'ArrowRight') lbNav(1);
+  });
+})();
+
+buildGallery();
+setInterval(cycleGallery, 4500);
+
+// Video modal — hero "Видео" button on mobile
+function openVideoModal(e){
+  if(e){ e.preventDefault(); e.stopPropagation(); }
+  var m = document.getElementById('vid-modal');
+  if(!m) return;
+  m.classList.add('open');
+  m.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+}
+function closeVideoModal(){
+  var m = document.getElementById('vid-modal');
+  if(!m) return;
+  m.classList.remove('open');
+  m.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+}
+(function(){
+  var m = document.getElementById('vid-modal');
+  if(!m) return;
+  document.getElementById('vid-modal-close').addEventListener('click', closeVideoModal);
+  m.addEventListener('click', function(e){ if(e.target === m) closeVideoModal(); });
+  document.addEventListener('keydown', function(e){
+    if(m.classList.contains('open') && e.key === 'Escape') closeVideoModal();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ru" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Dreamax Kindergarten — Международный детский сад, Пхукет</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue:#4BAEE8;--blue-dk:#2A8DC9;--blue-lt:#EDF6FD;--blue-mid:#C8E4F5;
+  --yellow:#F9C855;--yellow-lt:#FEF9EC;--yellow-dk:#C89010;
+  --navy:#1A2340;--navy2:#2C3A5C;--gray:#5A6A85;--gray-lt:#8A9DC0;
+  --green:#25D366;--bg:#F7FAFF;--r:20px;--rs:12px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito Sans',sans-serif;color:var(--navy);background:#fff;overflow-x:hidden;}
+h1,h2,h3,h4,.logo-name{font-family:'Nunito',sans-serif;}
+
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:13px 48px;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #EEF4FB;gap:16px;}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none;}
+.nav-logo-icon{width:36px;height:36px;border-radius:10px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-name{font-size:15px;font-weight:900;color:var(--navy);white-space:nowrap;line-height:1.1;}
+.logo-sub{font-size:10px;font-weight:600;color:var(--gray-lt);letter-spacing:.04em;}
+.nav-links{display:flex;gap:24px;flex:1;justify-content:center;}
+.nav-links a{font-size:13px;font-weight:700;color:var(--gray);text-decoration:none;transition:color .2s;white-space:nowrap;}
+.nav-links a:hover{color:var(--blue);}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.btn-wa{display:flex;align-items:center;gap:6px;background:var(--green);color:#fff;font-size:12.5px;font-weight:800;padding:8px 16px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;white-space:nowrap;text-decoration:none;transition:background .2s;}
+.btn-wa:hover{background:#1fba59;}
+.btn-primary{background:var(--blue);color:#fff;font-size:13px;font-weight:800;padding:8px 18px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;white-space:nowrap;transition:background .2s;}
+.btn-primary:hover{background:var(--blue-dk);}
+
+/* LANGUAGE SWITCHER — desktop */
+.lang-switch{display:flex;align-items:center;background:#F0F4FF;border-radius:20px;padding:3px;gap:2px;flex-shrink:0;}
+.lang-btn{font-size:12px;font-weight:800;padding:5px 11px;border-radius:16px;border:none;cursor:pointer;background:none;color:var(--gray-lt);font-family:'Nunito',sans-serif;transition:.2s;letter-spacing:.03em;}
+.lang-btn.active{background:#fff;color:var(--blue);box-shadow:0 1px 4px rgba(0,0,0,.1);}
+.lang-btn:hover:not(.active){color:var(--navy);}
+
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;z-index:99;background:#fff;border-bottom:1px solid #EEF4FB;padding:20px 28px;flex-direction:column;gap:14px;box-shadow:0 8px 32px rgba(0,0,0,.07);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:15px;font-weight:700;color:var(--navy);text-decoration:none;padding:4px 0;border-bottom:1px solid #F0F4FF;}
+.mobile-menu .btn-wa,.mobile-menu .btn-primary{width:100%;justify-content:center;padding:12px;margin-top:4px;border:none;}
+
+/* Mobile lang row inside burger */
+.mob-lang-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #F0F4FF;}
+.mob-lang-label{font-size:11px;font-weight:700;color:var(--gray-lt);letter-spacing:.07em;text-transform:uppercase;}
+.mob-lang-switch{display:flex;align-items:center;background:#F0F4FF;border-radius:20px;padding:3px;gap:2px;}
+.mob-lang-btn{font-size:13px;font-weight:800;padding:6px 14px;border-radius:16px;border:none;cursor:pointer;background:none;color:var(--gray-lt);font-family:'Nunito',sans-serif;transition:.2s;}
+.mob-lang-btn.active{background:#fff;color:var(--blue);box-shadow:0 1px 4px rgba(0,0,0,.1);}
+
+/* HERO */
+.hero{min-height:calc(100vh - 62px);max-height:860px;display:grid;grid-template-columns:1fr 1fr;background:var(--blue-lt);overflow:hidden;position:relative;}
+.hero-left{padding:64px 60px 64px 8%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--blue-mid);color:var(--blue-dk);font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:24px;width:fit-content;}
+.hero-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--yellow);flex-shrink:0;}
+.hero h1{font-size:clamp(36px,3.8vw,56px);font-weight:900;line-height:1.08;color:var(--navy);margin-bottom:18px;letter-spacing:-1.5px;white-space:nowrap;}
+.hero h1 em{color:var(--blue);font-style:italic;}
+.hero-sub{font-size:15px;color:var(--gray);line-height:1.7;margin-bottom:24px;max-width:100%;font-weight:500;}
+.hero-facts{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;width:100%;}
+.hero-fact{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--navy2);}
+.hf-icon{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+.btn-hero{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-size:15px;font-weight:800;padding:15px 32px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:none;transition:background .2s,transform .15s;align-self:center;box-shadow:0 6px 20px rgba(75,174,232,.35);}
+.btn-hero:hover{background:var(--blue-dk);transform:translateY(-1px);}
+.hero-right{position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding:0;}
+.hero-bg-circ{position:absolute;border-radius:50%;pointer-events:none;}
+.hero-video-wrap{position:relative;z-index:3;width:52%;height:92%;flex-shrink:0;border-radius:28px 28px 0 0;overflow:hidden;box-shadow:0 0 0 5px rgba(255,255,255,.85),0 24px 64px rgba(74,174,232,.25);border:5px solid rgba(255,255,255,.85);border-bottom:none;align-self:flex-end;}
+.hero-video-inner{position:absolute;inset:0;background:var(--blue-mid);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;height:100%;}
+.hero-video-inner svg{opacity:.3;color:var(--blue-dk);}
+.hero-video-inner span{font-size:12.5px;font-weight:700;color:var(--blue-dk);opacity:.5;text-align:center;padding:0 24px;line-height:1.6;}
+.hero-video-inner iframe,.hero-video-inner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:none;}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--navy);}
+.stat{padding:26px 32px;border-right:1px solid rgba(255,255,255,.07);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Nunito',sans-serif;font-size:30px;font-weight:900;color:var(--yellow);line-height:1;}
+.stat-label{font-size:12.5px;color:var(--gray-lt);font-weight:600;margin-top:5px;line-height:1.45;}
+
+.sec{padding:80px 56px;}
+.sec-alt{background:var(--blue-lt);}
+.sec-yellow{background:var(--yellow-lt);}
+.sec-white{background:#fff;}
+.sec-bg{background:var(--bg);}
+.tag{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--blue);text-transform:uppercase;margin-bottom:8px;}
+.sh2{font-size:34px;font-weight:900;color:var(--navy);letter-spacing:-.4px;margin-bottom:12px;line-height:1.15;}
+.sh2 em{color:var(--blue);font-style:normal;}
+.ssub{font-size:15px;color:var(--gray);line-height:1.7;max-width:560px;margin-bottom:48px;}
+
+.sched-tabs{display:flex;gap:0;background:#fff;border:1.5px solid var(--blue-mid);border-radius:30px;padding:4px;width:fit-content;margin:0 auto 40px auto;}
+.sched-tab{padding:10px 26px;border-radius:26px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--gray);background:none;border:none;cursor:pointer;transition:.2s;white-space:nowrap;}
+.sched-tab.active{background:var(--blue);color:#fff;}
+.sched-panel{display:none;}
+.sched-panel.active{display:block;}
+.sched-mobile{display:block;}
+.sched-desktop{display:none;}
+.sched-desktop .vtl:first-child{padding-right:40px;}
+.sched-desktop .vtl:last-child{padding-left:40px;}
+.sched-divider{background:var(--blue-mid);}
+@media(min-width:961px){.sched-mobile{display:none;}.sched-desktop{display:grid;grid-template-columns:1fr 2px 1fr;gap:0;}}
+
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.prog-card{border-radius:var(--r);padding:28px;transition:transform .25s;}
+.prog-card:hover{transform:translateY(-4px);}
+.prog-card.c1{background:var(--blue-lt);}
+.prog-card.c2{background:var(--yellow-lt);}
+.prog-card.c3{background:#F0EDFF;}
+.prog-ico{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:28px;}
+.prog-ico.i1{background:var(--blue-mid);}
+.prog-ico.i2{background:#FAE8A0;}
+.prog-ico.i3{background:#DDD6FF;}
+.prog-card h3{font-size:18px;font-weight:900;color:var(--navy);margin-bottom:10px;}
+.prog-card p{font-size:13.5px;color:var(--gray);line-height:1.65;margin-bottom:18px;}
+.prog-badge{display:inline-block;font-size:11px;font-weight:800;padding:4px 12px;border-radius:20px;letter-spacing:.06em;}
+.prog-badge.b1{background:var(--blue-mid);color:#185FA5;}
+.prog-badge.b2{background:#FAE8A0;color:#7A5200;}
+.prog-badge.b3{background:#DDD6FF;color:#4A35A0;}
+
+.act-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.act-card{background:#fff;border-radius:var(--r);padding:22px 20px;border:1.5px solid #E8F0FF;transition:transform .2s,border-color .2s;}
+.act-card:hover{transform:translateY(-3px);border-color:var(--blue-mid);}
+.act-emoji{font-size:32px;margin-bottom:12px;display:block;}
+.act-name{font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;color:var(--navy);margin-bottom:6px;}
+.act-desc{font-size:12.5px;color:var(--gray);line-height:1.55;}
+
+.calc-wrap{background:var(--blue-lt);border:1.5px solid var(--blue-mid);border-radius:var(--r);padding:32px;margin-bottom:20px;}
+.calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;}
+.calc-btn{background:#fff;border:2px solid #E0EDF8;border-radius:14px;padding:14px 10px;cursor:pointer;text-align:center;position:relative;transition:.18s;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.calc-btn:hover{border-color:var(--blue);transform:translateY(-2px);}
+.calc-btn.active{border-color:var(--blue);background:var(--blue);color:#fff;}
+.calc-btn.active .calc-price{color:#fff;}
+.calc-btn.calc-best{border-color:var(--yellow);}
+.calc-btn.calc-best.active{background:var(--yellow);border-color:var(--yellow);color:var(--navy);}
+.calc-label{font-size:12px;font-weight:700;color:var(--navy);line-height:1.3;}
+.calc-btn.active .calc-label{color:#fff;}
+.calc-btn.calc-best.active .calc-label{color:var(--navy);}
+.calc-price{font-size:13px;font-weight:800;color:var(--blue);}
+.calc-badge{font-size:10px;font-weight:800;background:var(--blue-mid);color:var(--blue-dk);padding:2px 6px;border-radius:20px;position:absolute;top:-8px;left:50%;transform:translateX(-50%);white-space:nowrap;}
+.calc-badge.best{background:var(--yellow);color:var(--navy);}
+.calc-result{background:#fff;border-radius:12px;padding:20px 24px;text-align:center;margin-bottom:20px;min-height:72px;display:flex;align-items:center;justify-content:center;}
+.calc-result-text{color:#aab;font-size:14px;font-weight:600;}
+.calc-result-price{font-size:32px;font-weight:900;color:var(--blue-dk);}
+.calc-result-sub{font-size:14px;font-weight:600;color:var(--gray);}
+@media(max-width:960px){.calc-grid{grid-template-columns:repeat(2,1fr);}.calc-wrap{padding:20px;}}
+.sched-desktop .vtl::before{display:none;}
+.gal-menu-item{display:none;}
+@media(max-width:960px){.gal-menu-item{display:block;}}
+.gal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:12px;}
+.gal-item{border-radius:var(--rs);overflow:hidden;}
+.gal-item:first-child{grid-row:1/3;}
+.gal-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.gal-ph svg{opacity:.3;}
+.gal-ph span{font-size:12px;font-weight:700;opacity:.5;}
+.gal-item:nth-child(1) .gal-ph{background:#C8E4F5;color:var(--blue-dk);}
+.gal-item:nth-child(2) .gal-ph{background:#FAE8A0;color:#7A5200;}
+.gal-item:nth-child(3) .gal-ph{background:#C9F0E0;color:#1A6B4A;}
+.gal-item:nth-child(4) .gal-ph{background:#F5CCE0;color:#8B3060;}
+.gal-item:nth-child(5) .gal-ph{background:#D6CCFF;color:#4A35A0;}
+
+.price-note{background:var(--yellow-lt);border-radius:var(--rs);padding:16px 20px;font-size:13.5px;color:var(--navy2);font-weight:600;line-height:1.6;border:1px solid #FAE8A0;margin-bottom:24px;}
+.price-cta{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-blue{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-size:14px;font-weight:800;padding:13px 26px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:none;transition:background .2s;}
+.btn-blue:hover{background:var(--blue-dk);}
+.btn-green{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-size:14px;font-weight:800;padding:13px 24px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:none;transition:background .2s;}
+.btn-green:hover{background:#1fba59;}
+
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.rev-card{background:#fff;border-radius:var(--r);padding:24px;border:1px solid #E8F0FF;}
+.rev-stars{color:var(--yellow);font-size:15px;letter-spacing:2px;margin-bottom:10px;}
+.rev-text{font-size:14px;color:#3A4A62;line-height:1.65;margin-bottom:16px;font-weight:500;}
+.rev-author{display:flex;align-items:center;gap:10px;}
+.rev-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif;}
+.rev-name{font-family:'Nunito',sans-serif;font-size:13.5px;font-weight:800;color:var(--navy);}
+.rev-sub{font-size:11.5px;color:var(--gray-lt);font-weight:600;}
+
+.apply-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;}
+.apply-grid::after{content:'';position:absolute;top:35px;left:calc(33.33% - 10px);right:calc(33.33% - 10px);height:2px;background:repeating-linear-gradient(90deg,var(--blue-mid) 0,var(--blue-mid) 8px,transparent 8px,transparent 18px);}
+.apply-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 16px;}
+.step-circle{width:70px;height:70px;border-radius:50%;background:var(--blue-lt);border:3px solid var(--blue-mid);display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:20px;position:relative;z-index:1;flex-shrink:0;}
+.step-title{font-family:'Nunito',sans-serif;font-size:17px;font-weight:900;color:var(--navy);margin-bottom:8px;}
+.step-desc{font-size:13.5px;color:var(--gray);line-height:1.6;}
+.contact-box{margin-top:52px;background:var(--blue-lt);border-radius:24px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.contact-box h4{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:6px;}
+.contact-box p{font-size:14px;color:var(--gray);font-weight:500;}
+.contact-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-email{display:flex;align-items:center;gap:7px;background:#fff;border:1.5px solid #D0E8F8;color:var(--navy);font-size:14px;font-weight:800;padding:12px 20px;border-radius:30px;text-decoration:none;font-family:'Nunito',sans-serif;}
+
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+.faq-item{background:#fff;border-radius:var(--rs);border:1px solid #E8F0FF;overflow:hidden;}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 22px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;color:var(--navy);background:none;border:none;cursor:pointer;text-align:left;gap:16px;}
+.faq-arr{width:28px;height:28px;border-radius:50%;background:var(--blue-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s;color:var(--blue);}
+.faq-item.open .faq-arr{transform:rotate(180deg);background:var(--blue);color:#fff;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a-in{padding:0 22px 18px;font-size:14px;color:var(--gray);line-height:1.7;}
+
+.cta-sec{background:var(--blue);padding:80px 56px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.cta-text h2{font-size:32px;font-weight:900;color:#fff;margin-bottom:8px;}
+.cta-text p{font-size:15px;color:rgba(255,255,255,.8);font-weight:500;}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-cta-y{background:var(--yellow);color:var(--navy);font-size:15px;font-weight:800;padding:14px 28px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:none;display:inline-flex;align-items:center;transition:background .2s;}
+.btn-cta-y:hover{background:#f0bb3a;}
+.btn-cta-wa{display:flex;align-items:center;gap:8px;background:#fff;color:var(--navy);font-size:15px;font-weight:800;padding:14px 24px;border-radius:30px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;text-decoration:none;transition:.2s;}
+.btn-cta-wa:hover{background:#f0f8ff;}
+
+footer{background:var(--navy);padding:40px 56px;display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:start;}
+.ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.ft-logo-icon{width:32px;height:32px;border-radius:9px;background:var(--blue);display:flex;align-items:center;justify-content:center;}
+.ft-logo-name{font-family:'Nunito',sans-serif;font-size:14px;font-weight:900;color:#fff;}
+.ft-tag{font-size:12px;color:#4A6080;font-weight:600;line-height:1.55;}
+.ft-links{display:flex;flex-direction:column;gap:10px;align-items:center;}
+.ft-links a{font-size:13px;color:#4A6080;font-weight:600;text-decoration:none;transition:color .2s;}
+.ft-links a:hover{color:var(--blue);}
+.ft-info{text-align:right;font-size:12px;color:#4A6080;font-weight:600;line-height:1.8;}
+.ft-copy{margin-top:10px;font-size:11px;color:#3A4E6A;font-weight:600;}
+
+.vtl{position:relative;padding-left:40px;}
+.vtl::before{content:'';position:absolute;left:14px;top:6px;bottom:6px;width:2px;background:var(--blue-mid);border-radius:2px;}
+.vtl-item{position:relative;padding-bottom:28px;}
+.vtl-item:last-child{padding-bottom:0;}
+.vtl-dot{position:absolute;left:-26px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 2px var(--blue);}
+.vtl-item.is-break .vtl-dot{background:var(--yellow);box-shadow:0 0 0 2px var(--yellow);}
+.vtl-time{font-size:11.5px;font-weight:800;color:var(--blue);letter-spacing:.06em;margin-bottom:3px;}
+.vtl-item.is-break .vtl-time{color:var(--yellow-dk);}
+.vtl-title{font-family:"Nunito",sans-serif;font-size:15px;font-weight:800;color:var(--navy);margin-bottom:3px;}
+.vtl-desc{font-size:13px;color:var(--gray);line-height:1.5;}
+.vtl-item.is-break .vtl-title{color:var(--yellow-dk);}
+@media(max-width:960px){.sched-mobile .vtl::before{left:20px;top:11px;bottom:11px;width:2px;}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:960px){
+  .nav{padding:13px 20px;}
+  .nav-links,.nav-right .btn-primary,.nav-right .btn-wa,.nav-right .lang-switch{display:none;}
+  .burger{display:flex;}
+  .hero{grid-template-columns:1fr;min-height:auto;max-height:none;}
+  .hero-left{padding:44px 28px 36px;}
+  .hero h1{font-size:32px;white-space:normal;}
+  .hero-right{display:none;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .sec{padding:52px 24px;}
+  .sh2{font-size:26px;}
+  .ssub{margin-bottom:32px;}
+  .prog-grid,.rev-grid{grid-template-columns:1fr;}
+  .act-grid{grid-template-columns:1fr 1fr;}
+  .apply-grid{grid-template-columns:1fr;gap:28px;}
+  .apply-grid::after{display:none;}
+  .apply-step{flex-direction:row;text-align:left;align-items:flex-start;gap:16px;padding:0;}
+  .step-circle{margin-bottom:0;flex-shrink:0;width:56px;height:56px;font-size:24px;}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px;}
+  .gal-item:first-child{grid-row:1;}
+  .cta-sec{padding:52px 24px;flex-direction:column;align-items:center;text-align:center;}
+  .cta-sec h2{font-size:24px;}
+  .cta-btns{flex-direction:column;align-items:center;width:100%;}
+  .btn-cta-wa,.btn-cta-y{width:100%;justify-content:center;}
+  footer{grid-template-columns:1fr;gap:24px;}
+  .ft-info{text-align:left;}
+  .ft-links{align-items:flex-start;}
+  .contact-box{flex-direction:column;align-items:flex-start;padding:24px;}
+}
+
+/* i18n — CSS-driven language switching via html[lang] attribute */
+html[lang="ru"] [data-lang="en"]{display:none!important;}
+html[lang="en"] [data-lang="ru"]{display:none!important;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" fill="white" opacity=".2"/><circle cx="10" cy="10" r="4" fill="white"/><circle cx="10" cy="4.5" r="1.8" fill="white" opacity=".6"/></svg>
+    </div>
+    <div>
+      <div class="logo-name">Dreamax Kindergarten</div>
+      <div class="logo-sub" data-lang="ru">Пхукет, Таиланд</div>
+      <div class="logo-sub" data-lang="en">Phuket, Thailand</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#programs" data-lang="ru">Программа</a>
+    <a href="#programs" data-lang="en">Programme</a>
+    <a href="#schedule" data-lang="ru">Расписание</a>
+    <a href="#schedule" data-lang="en">Schedule</a>
+    <a href="#pricing" data-lang="ru">Цены</a>
+    <a href="#pricing" data-lang="en">Pricing</a>
+    <a href="#reviews" data-lang="ru">Отзывы</a>
+    <a href="#reviews" data-lang="en">Reviews</a>
+    <a href="#apply" data-lang="ru">Поступление</a>
+    <a href="#apply" data-lang="en">Enrolment</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switch" id="desktop-lang">
+      <button class="lang-btn" id="d-ru" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" id="d-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="https://wa.me/66635067812" target="_blank" class="btn-wa">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.062.522 4.004 1.442 5.7L.055 23.455a.5.5 0 0 0 .611.601l5.861-1.372A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 0 1-5.022-1.379l-.36-.214-3.733.874.898-3.645-.235-.374A9.782 9.782 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      WhatsApp
+    </a>
+    <button class="btn-primary" data-lang="ru" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Записать ребёнка</button>
+    <button class="btn-primary" data-lang="en" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Enrol Your Child</button>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mob-lang-row">
+    <span class="mob-lang-label" data-lang="ru">Язык:</span>
+    <span class="mob-lang-label" data-lang="en">Language:</span>
+    <div class="mob-lang-switch">
+      <button class="mob-lang-btn" id="m-ru" onclick="setLang('ru');closeMob()">RU</button>
+      <button class="mob-lang-btn" id="m-en" onclick="setLang('en');closeMob()">EN</button>
+    </div>
+  </div>
+  <a href="#programs" data-lang="ru" onclick="closeMob()">Программа</a>
+  <a href="#programs" data-lang="en" onclick="closeMob()">Programme</a>
+  <a href="#schedule" data-lang="ru" onclick="closeMob()">Расписание</a>
+  <a href="#schedule" data-lang="en" onclick="closeMob()">Schedule</a>
+  <a href="#pricing" data-lang="ru" onclick="closeMob()">Цены</a>
+  <a href="#pricing" data-lang="en" onclick="closeMob()">Pricing</a>
+  <a href="#reviews" data-lang="ru" onclick="closeMob()">Отзывы</a>
+  <a href="#reviews" data-lang="en" onclick="closeMob()">Reviews</a>
+  <a href="#apply" data-lang="ru" onclick="closeMob()">Поступление</a>
+  <a href="#apply" data-lang="en" onclick="closeMob()">Enrolment</a>
+  <a href="#faq" onclick="closeMob()">FAQ</a>
+  <a href="https://wa.me/66635067812" target="_blank" class="btn-wa" style="border:none;">WhatsApp · +66 635 067 812</a>
+  <button class="btn-primary" data-lang="ru" onclick="closeMob();document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Записать ребёнка</button>
+  <button class="btn-primary" data-lang="en" onclick="closeMob();document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Enrol Your Child</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      <span data-lang="ru">Пхукет · Международный детский сад с 2015 г.</span>
+      <span data-lang="en">Phuket · International Kindergarten since 2015</span>
+    </div>
+    <h1 data-lang="ru">Место, где дети<br>учатся думать<br>на <em>двух языках</em></h1>
+    <h1 data-lang="en">Where children<br>learn to think<br>in <em>two languages</em></h1>
+    <p class="hero-sub" data-lang="ru">Билингвальный сад для детей от 2,5 до 7 лет. Педагоги из Великобритании, Кембриджская программа, бассейн каждый день.</p>
+    <p class="hero-sub" data-lang="en">A bilingual kindergarten for children aged 2.5–7. Native UK teachers, Cambridge curriculum, and a swimming pool every single day.</p>
+    <div class="hero-facts">
+      <div class="hero-fact"><div class="hf-icon" style="background:#D0E8F8;">🇬🇧</div>
+        <span data-lang="ru">Педагоги-носители из Великобритании</span>
+        <span data-lang="en">Native-speaking teachers from the UK</span>
+      </div>
+      <div class="hero-fact"><div class="hf-icon" style="background:#FAE8A0;">📚</div>
+        <span data-lang="ru">Кембриджская + Российская программы</span>
+        <span data-lang="en">Cambridge + Russian curriculum combined</span>
+      </div>
+      <div class="hero-fact"><div class="hf-icon" style="background:#C9F0E0;">🏊</div>
+        <span data-lang="ru">Бассейн каждый день</span>
+        <span data-lang="en">Swimming pool every day</span>
+      </div>
+      <div class="hero-fact"><div class="hf-icon" style="background:#DDD6FF;">👶</div>
+        <span data-lang="ru">Максимум 8 детей в группе</span>
+        <span data-lang="en">Maximum 8 children per group</span>
+      </div>
+    </div>
+    <a href="#apply" class="btn-hero" data-lang="ru">Записать ребёнка</a>
+    <a href="#apply" class="btn-hero" data-lang="en">Enrol Your Child</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-circ" style="width:480px;height:480px;background:var(--blue-mid);opacity:.3;top:-120px;right:-100px;"></div>
+    <div class="hero-bg-circ" style="width:200px;height:200px;background:var(--yellow);opacity:.2;bottom:100px;left:20px;"></div>
+    <div class="hero-bg-circ" style="width:120px;height:120px;background:var(--blue);opacity:.12;bottom:280px;right:40px;"></div>
+    <div class="hero-video-wrap">
+      <div class="hero-video-inner">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="22" stroke="#2A8DC9" stroke-width="2"/><polygon points="21,18 38,26 21,34" fill="#2A8DC9" opacity=".5"/></svg>
+        <span data-lang="ru">Вставьте вертикальное<br>видео вашего сада<br>(формат 9:16)</span>
+        <span data-lang="en">Insert your kindergarten<br>vertical video here<br>(9:16 format)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">2015</div>
+    <div class="stat-label" data-lang="ru">год основания — более 10 лет на Пхукете</div>
+    <div class="stat-label" data-lang="en">founded — 10+ years in Phuket</div>
+  </div>
+  <div class="stat"><div class="stat-num">RU+EN</div>
+    <div class="stat-label" data-lang="ru">два языка с первого дня в саду</div>
+    <div class="stat-label" data-lang="en">two languages from day one</div>
+  </div>
+  <div class="stat"><div class="stat-num">8</div>
+    <div class="stat-label" data-lang="ru">детей максимум в группе — каждый на виду</div>
+    <div class="stat-label" data-lang="en">children max per group — every child noticed</div>
+  </div>
+  <div class="stat"><div class="stat-num">UK</div>
+    <div class="stat-label" data-lang="ru">педагоги из Великобритании, носители языка</div>
+    <div class="stat-label" data-lang="en">native British teachers on our team</div>
+  </div>
+</div>
+
+<!-- PROGRAMS -->
+<section class="sec sec-white" id="programs">
+  <div class="tag reveal" data-lang="ru">Чему мы учим</div>
+  <div class="tag reveal" data-lang="en">What We Teach</div>
+  <div class="sh2 reveal" data-lang="ru">Наши <em>программы</em></div>
+  <div class="sh2 reveal" data-lang="en">Our <em>Programmes</em></div>
+  <div class="ssub reveal" data-lang="ru">Лучшее из двух систем образования — объединённое в одну живую среду</div>
+  <div class="ssub reveal" data-lang="en">The best of two educational systems — merged into one living environment</div>
+  <div class="prog-grid reveal">
+    <div class="prog-card c1">
+      <div class="prog-ico i1">🎓</div>
+      <h3 data-lang="ru">Кембриджская международная программа</h3>
+      <h3 data-lang="en">Cambridge International Programme</h3>
+      <p data-lang="ru">Педагоги из Великобритании с дипломами ведут занятия на английском. Phonics, Drama, Oxford Phonics, English Speaking Club — каждый день погружение через живое общение.</p>
+      <p data-lang="en">Qualified UK teachers lead daily English sessions. Phonics, Drama, Oxford Phonics, English Speaking Club — total immersion through real communication every day.</p>
+      <span class="prog-badge b1">Cambridge Certified</span>
+    </div>
+    <div class="prog-card c2">
+      <div class="prog-ico i2">📖</div>
+      <h3 data-lang="ru">Российская инновационная программа</h3>
+      <h3 data-lang="en">Russian Innovation Programme</h3>
+      <p data-lang="ru">Утверждена Министерством образования РФ. Развитие речи, обучение грамоте, математика, мир вокруг нас — всё для комфортного перехода в русскоязычную школу.</p>
+      <p data-lang="en">Approved by the Russian Ministry of Education. Speech development, literacy, maths, world knowledge — designed for a smooth transition to a Russian-medium school.</p>
+      <span class="prog-badge b2" data-lang="ru">МО РФ · Утверждена</span>
+      <span class="prog-badge b2" data-lang="en">Approved · Min. of Education RF</span>
+    </div>
+    <div class="prog-card c3">
+      <div class="prog-ico i3">⭐</div>
+      <h3 data-lang="ru">Дополнительные занятия</h3>
+      <h3 data-lang="en">Enrichment Activities</h3>
+      <p data-lang="ru">Тайская культура, бассейн, логопед, Clay Workshop, Cooking Class, Music, Arts &amp; Crafts, PE — более 15 активностей каждую неделю. Каждый день не похож на предыдущий.</p>
+      <p data-lang="en">Thai culture, swimming pool, speech therapy, Clay Workshop, Cooking Class, Music, Arts &amp; Crafts, PE — 15+ activities every week. No two days are alike.</p>
+      <span class="prog-badge b3" data-lang="ru">15+ активностей</span>
+      <span class="prog-badge b3" data-lang="en">15+ activities</span>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="sec sec-alt" id="schedule">
+  <div class="tag reveal" style="text-align:center;" data-lang="ru">Расписание</div>
+  <div class="tag reveal" style="text-align:center;" data-lang="en">Daily Schedule</div>
+  <div class="sh2 reveal" style="text-align:center;" data-lang="ru">Как устроен <em>день в саду</em></div>
+  <div class="sh2 reveal" style="text-align:center;" data-lang="en">How <em>a day works</em></div>
+  <div class="ssub reveal" style="text-align:center;margin-left:auto;margin-right:auto;" data-lang="ru">Выберите группу — расписание разное для малышей и детей постарше</div>
+  <div class="ssub reveal" style="text-align:center;margin-left:auto;margin-right:auto;" data-lang="en">Select a group — the schedule differs for younger and older children</div>
+  <div class="sched-tabs reveal">
+    <button class="sched-tab active" onclick="switchTab(this,'junior')">
+      <span data-lang="ru">Младшая группа</span><span data-lang="en">Junior Group</span>
+    </button>
+    <button class="sched-tab" onclick="switchTab(this,'senior')">
+      <span data-lang="ru">Старшая группа</span><span data-lang="en">Senior Group</span>
+    </button>
+  </div>
+
+  <!-- JUNIOR -->
+  <div class="sched-panel active reveal" id="panel-junior">
+    <div class="sched-mobile"><div class="vtl">
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">09:00 — 09:45</div>
+        <div class="vtl-title" data-lang="ru">Занятия по программе</div><div class="vtl-title" data-lang="en">Curriculum activities</div>
+        <div class="vtl-desc" data-lang="ru">Мир вокруг нас, основы математики</div><div class="vtl-desc" data-lang="en">World around us, introduction to maths</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">09:45 — 10:00</div>
+        <div class="vtl-title" data-lang="ru">🍳 Завтрак</div><div class="vtl-title" data-lang="en">🍳 Breakfast</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:00 — 10:45</div>
+        <div class="vtl-title" data-lang="ru">English каждый день 🇬🇧</div><div class="vtl-title" data-lang="en">English every day 🇬🇧</div>
+        <div class="vtl-desc" data-lang="ru">Педагог-носитель из Великобритании</div><div class="vtl-desc" data-lang="en">Native teacher from the United Kingdom</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:50 — 11:35</div>
+        <div class="vtl-title" data-lang="ru">Обучение грамоте</div><div class="vtl-title" data-lang="en">Literacy &amp; Reading</div>
+        <div class="vtl-desc" data-lang="ru">Чтение и письмо — через день</div><div class="vtl-desc" data-lang="en">Reading and writing — alternating days</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:00 — 12:30</div>
+        <div class="vtl-title" data-lang="ru">🥗 Обед</div><div class="vtl-title" data-lang="en">🥗 Lunch</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:30 — 15:00</div>
+        <div class="vtl-title" data-lang="ru">😴 Тихий час</div><div class="vtl-title" data-lang="en">😴 Quiet time / Nap</div>
+        <div class="vtl-desc" data-lang="ru">Младшая группа спит</div><div class="vtl-desc" data-lang="en">Junior group rests</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">15:00 — 15:15</div>
+        <div class="vtl-title" data-lang="ru">🍎 Полдник</div><div class="vtl-title" data-lang="en">🍎 Afternoon snack</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:15 — 15:50</div>
+        <div class="vtl-title" data-lang="ru">Физкультура и плавание</div><div class="vtl-title" data-lang="en">PE &amp; Swimming</div>
+        <div class="vtl-desc" data-lang="ru">PE и Swimming чередуются</div><div class="vtl-desc" data-lang="en">PE and Swimming alternate</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:50 — 16:20</div>
+        <div class="vtl-title" data-lang="ru">Творчество и музыка</div><div class="vtl-title" data-lang="en">Creative arts &amp; Music</div>
+        <div class="vtl-desc">Arts &amp; Crafts, Music, Cooking Class</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">16:20 — 17:00</div>
+        <div class="vtl-title" data-lang="ru">Логопед / Развитие речи / Стихи и сказки</div>
+        <div class="vtl-title" data-lang="en">Speech therapy / Storytelling / Rhymes</div>
+      </div>
+    </div></div>
+    <div class="sched-desktop">
+      <div class="vtl">
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">09:00 — 09:45</div>
+          <div class="vtl-title" data-lang="ru">Занятия по программе</div><div class="vtl-title" data-lang="en">Curriculum activities</div>
+          <div class="vtl-desc" data-lang="ru">Мир вокруг нас, основы математики</div><div class="vtl-desc" data-lang="en">World around us, introduction to maths</div>
+        </div>
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">09:45 — 10:00</div>
+          <div class="vtl-title" data-lang="ru">🍳 Завтрак</div><div class="vtl-title" data-lang="en">🍳 Breakfast</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:00 — 10:45</div>
+          <div class="vtl-title" data-lang="ru">English каждый день 🇬🇧</div><div class="vtl-title" data-lang="en">English every day 🇬🇧</div>
+          <div class="vtl-desc" data-lang="ru">Педагог-носитель из Великобритании</div><div class="vtl-desc" data-lang="en">Native teacher from the United Kingdom</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:50 — 11:35</div>
+          <div class="vtl-title" data-lang="ru">Обучение грамоте</div><div class="vtl-title" data-lang="en">Literacy &amp; Reading</div>
+          <div class="vtl-desc" data-lang="ru">Чтение и письмо — через день</div><div class="vtl-desc" data-lang="en">Reading and writing — alternating days</div>
+        </div>
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:00 — 12:30</div>
+          <div class="vtl-title" data-lang="ru">🥗 Обед</div><div class="vtl-title" data-lang="en">🥗 Lunch</div>
+        </div>
+      </div>
+      <div class="sched-divider"></div>
+      <div class="vtl">
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:30 — 15:00</div>
+          <div class="vtl-title" data-lang="ru">😴 Тихий час</div><div class="vtl-title" data-lang="en">😴 Quiet time / Nap</div>
+          <div class="vtl-desc" data-lang="ru">Младшая группа спит</div><div class="vtl-desc" data-lang="en">Junior group rests</div>
+        </div>
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">15:00 — 15:15</div>
+          <div class="vtl-title" data-lang="ru">🍎 Полдник</div><div class="vtl-title" data-lang="en">🍎 Afternoon snack</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:15 — 15:50</div>
+          <div class="vtl-title" data-lang="ru">Физкультура и плавание</div><div class="vtl-title" data-lang="en">PE &amp; Swimming</div>
+          <div class="vtl-desc" data-lang="ru">PE и Swimming чередуются</div><div class="vtl-desc" data-lang="en">PE and Swimming alternate</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:50 — 16:20</div>
+          <div class="vtl-title" data-lang="ru">Творчество и музыка</div><div class="vtl-title" data-lang="en">Creative arts &amp; Music</div>
+          <div class="vtl-desc">Arts &amp; Crafts, Music, Cooking Class</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">16:20 — 17:00</div>
+          <div class="vtl-title" data-lang="ru">Логопед / Развитие речи / Стихи и сказки</div>
+          <div class="vtl-title" data-lang="en">Speech therapy / Storytelling / Rhymes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SENIOR -->
+  <div class="sched-panel" id="panel-senior">
+    <div class="sched-mobile"><div class="vtl">
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">09:00 — 10:00</div>
+        <div class="vtl-title" data-lang="ru">Занятия по программе</div><div class="vtl-title" data-lang="en">Curriculum activities</div>
+        <div class="vtl-desc" data-lang="ru">Thai Culture, основы математики — чередуются по дням</div><div class="vtl-desc" data-lang="en">Thai Culture, maths fundamentals — alternating days</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">10:00 — 10:25</div>
+        <div class="vtl-title" data-lang="ru">🍳 Завтрак + прогулка</div><div class="vtl-title" data-lang="en">🍳 Breakfast + outdoor walk</div>
+        <div class="vtl-desc" data-lang="ru">Русско-европейское меню из собственной кухни</div><div class="vtl-desc" data-lang="en">Russian-European menu from our own kitchen</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:25 — 11:10</div>
+        <div class="vtl-title" data-lang="ru">Английский блок</div><div class="vtl-title" data-lang="en">English block</div>
+        <div class="vtl-desc" data-lang="ru">Drama, плавание, Music или Phonics — каждый день разное</div><div class="vtl-desc" data-lang="en">Drama, swimming, Music or Phonics — different each day</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">11:15 — 12:35</div>
+        <div class="vtl-title" data-lang="ru">Развитие и творчество</div><div class="vtl-title" data-lang="en">Development &amp; creativity</div>
+        <div class="vtl-desc" data-lang="ru">Arts &amp; Crafts, English Speaking Club, Cooking Class, Развитие речи</div>
+        <div class="vtl-desc" data-lang="en">Arts &amp; Crafts, English Speaking Club, Cooking Class, speech development</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:35 — 13:05</div>
+        <div class="vtl-title" data-lang="ru">🥗 Обед + прогулка на свежем воздухе</div><div class="vtl-title" data-lang="en">🥗 Lunch + fresh air walk</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">13:05 — 14:45</div>
+        <div class="vtl-title" data-lang="ru">English Reading Club + активный блок</div><div class="vtl-title" data-lang="en">English Reading Club + active block</div>
+        <div class="vtl-desc" data-lang="ru">Плавание, PE, Oxford Phonics — чередуются</div><div class="vtl-desc" data-lang="en">Swimming, PE, Oxford Phonics — rotating</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:00 — 15:45</div>
+        <div class="vtl-title" data-lang="ru">Фонетика и письмо</div><div class="vtl-title" data-lang="en">Phonics &amp; writing</div>
+        <div class="vtl-desc">Oxford Phonics, Thai Culture, English Phonics Writing</div>
+      </div>
+      <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">15:45 — 16:15</div>
+        <div class="vtl-title" data-lang="ru">🍎 Полдник + игры</div><div class="vtl-title" data-lang="en">🍎 Snack + free play</div>
+      </div>
+      <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">16:15 — 17:00</div>
+        <div class="vtl-title" data-lang="ru">Логопед / Clay Workshop / Творческая мастерская</div>
+        <div class="vtl-title" data-lang="en">Speech therapy / Clay Workshop / Creative studio</div>
+      </div>
+    </div></div>
+    <div class="sched-desktop">
+      <div class="vtl">
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">09:00 — 10:00</div>
+          <div class="vtl-title" data-lang="ru">Занятия по программе</div><div class="vtl-title" data-lang="en">Curriculum activities</div>
+          <div class="vtl-desc" data-lang="ru">Thai Culture, основы математики — чередуются по дням</div><div class="vtl-desc" data-lang="en">Thai Culture, maths fundamentals — alternating days</div>
+        </div>
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">10:00 — 10:25</div>
+          <div class="vtl-title" data-lang="ru">🍳 Завтрак + прогулка</div><div class="vtl-title" data-lang="en">🍳 Breakfast + outdoor walk</div>
+          <div class="vtl-desc" data-lang="ru">Русско-европейское меню из собственной кухни</div><div class="vtl-desc" data-lang="en">Russian-European menu from our own kitchen</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">10:25 — 11:10</div>
+          <div class="vtl-title" data-lang="ru">Английский блок</div><div class="vtl-title" data-lang="en">English block</div>
+          <div class="vtl-desc" data-lang="ru">Drama, плавание, Music или Phonics — каждый день разное</div><div class="vtl-desc" data-lang="en">Drama, swimming, Music or Phonics — different each day</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">11:15 — 12:35</div>
+          <div class="vtl-title" data-lang="ru">Развитие и творчество</div><div class="vtl-title" data-lang="en">Development &amp; creativity</div>
+          <div class="vtl-desc" data-lang="ru">Arts &amp; Crafts, English Speaking Club, Cooking Class, Развитие речи</div>
+          <div class="vtl-desc" data-lang="en">Arts &amp; Crafts, English Speaking Club, Cooking Class, speech development</div>
+        </div>
+      </div>
+      <div class="sched-divider"></div>
+      <div class="vtl">
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">12:35 — 13:05</div>
+          <div class="vtl-title" data-lang="ru">🥗 Обед + прогулка на свежем воздухе</div><div class="vtl-title" data-lang="en">🥗 Lunch + fresh air walk</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">13:05 — 14:45</div>
+          <div class="vtl-title" data-lang="ru">English Reading Club + активный блок</div><div class="vtl-title" data-lang="en">English Reading Club + active block</div>
+          <div class="vtl-desc" data-lang="ru">Плавание, PE, Oxford Phonics — чередуются</div><div class="vtl-desc" data-lang="en">Swimming, PE, Oxford Phonics — rotating</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">15:00 — 15:45</div>
+          <div class="vtl-title" data-lang="ru">Фонетика и письмо</div><div class="vtl-title" data-lang="en">Phonics &amp; writing</div>
+          <div class="vtl-desc">Oxford Phonics, Thai Culture, English Phonics Writing</div>
+        </div>
+        <div class="vtl-item is-break"><div class="vtl-dot"></div><div class="vtl-time">15:45 — 16:15</div>
+          <div class="vtl-title" data-lang="ru">🍎 Полдник + игры</div><div class="vtl-title" data-lang="en">🍎 Snack + free play</div>
+        </div>
+        <div class="vtl-item"><div class="vtl-dot"></div><div class="vtl-time">16:15 — 17:00</div>
+          <div class="vtl-title" data-lang="ru">Логопед / Clay Workshop / Творческая мастерская</div>
+          <div class="vtl-title" data-lang="en">Speech therapy / Clay Workshop / Creative studio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section class="sec sec-white">
+  <div class="tag reveal" data-lang="ru">Активности</div>
+  <div class="tag reveal" data-lang="en">Activities</div>
+  <div class="sh2 reveal" data-lang="ru">Каждый день — <em>что-то новое</em></div>
+  <div class="sh2 reveal" data-lang="en">Every day — <em>something new</em></div>
+  <div class="ssub reveal" data-lang="ru">Помимо основной программы — творческие, спортивные и культурные занятия каждую неделю</div>
+  <div class="ssub reveal" data-lang="en">Beyond the core curriculum — creative, sports, and cultural sessions every week</div>
+  <div class="act-grid reveal">
+    <div class="act-card"><span class="act-emoji">🏊</span>
+      <div class="act-name" data-lang="ru">Бассейн</div><div class="act-name" data-lang="en">Swimming Pool</div>
+      <div class="act-desc" data-lang="ru">Ежедневное плавание под присмотром инструктора. Собственный бассейн на территории сада.</div>
+      <div class="act-desc" data-lang="en">Daily swimming with a qualified instructor. Our own pool on-site.</div>
+    </div>
+    <div class="act-card"><span class="act-emoji">🎨</span>
+      <div class="act-name">Arts &amp; Crafts</div>
+      <div class="act-desc" data-lang="ru">Рисование, аппликация, творческие мастерские — развиваем мелкую моторику и фантазию.</div>
+      <div class="act-desc" data-lang="en">Drawing, collage, and creative workshops — building fine motor skills and imagination.</div>
+    </div>
+    <div class="act-card"><span class="act-emoji">🍳</span>
+      <div class="act-name">Cooking Class</div>
+      <div class="act-desc" data-lang="ru">Дети готовят сами — учатся счёту, внимательности и ответственности одновременно.</div>
+      <div class="act-desc" data-lang="en">Children cook themselves — learning counting, focus, and responsibility all at once.</div>
+    </div>
+    <div class="act-card"><span class="act-emoji">🏺</span>
+      <div class="act-name">Clay Workshop</div>
+      <div class="act-desc" data-lang="ru">Лепка из глины — один из самых любимых уроков. Развивает усидчивость и концентрацию.</div>
+      <div class="act-desc" data-lang="en">Clay modelling — one of the most loved lessons. Builds patience and concentration.</div>
+    </div>
+    <div class="act-card"><span class="act-emoji">🎭</span>
+      <div class="act-name">Drama</div>
+      <div class="act-desc" data-lang="ru">Театральные занятия на английском — дети учатся говорить уверенно и слушать других.</div>
+      <div class="act-desc" data-lang="en">Drama in English — children learn to speak confidently and listen to others.</div>
+    </div>
+    <div class="act-card"><span class="act-emoji">🥊</span>
+      <div class="act-name" data-lang="ru">PE &amp; Бокс</div><div class="act-name" data-lang="en">PE &amp; Boxing</div>
+      <div class="act-desc" data-lang="ru">Физическое воспитание, координация и дисциплина через спорт — весело и без травм.</div>
+      <div class="act-desc" data-lang="en">Physical education, coordination and discipline through sport — fun and injury-free.</div>
+    </div>
+    <div class="act-card"><span class="act-emoji">🌿</span>
+      <div class="act-name">Thai Culture</div>
+      <div class="act-desc" data-lang="ru">Знакомство с Таиландом — язык, традиции, праздники. Ребёнок знает, где он живёт.</div>
+      <div class="act-desc" data-lang="en">Exploring Thailand — language, traditions, festivals. Children know where they live.</div>
+    </div>
+    <div class="act-card"><span class="act-emoji">🎵</span>
+      <div class="act-name">Music &amp; Dance</div>
+      <div class="act-desc" data-lang="ru">Музыкальные занятия и танцы — ритм, слух, координация и радость от движения.</div>
+      <div class="act-desc" data-lang="en">Music and dance — rhythm, ear training, coordination, and joy of movement.</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec sec-yellow" id="gallery">
+  <div class="tag reveal" data-lang="ru">Наш сад</div>
+  <div class="tag reveal" data-lang="en">Our Kindergarten</div>
+  <div class="sh2 reveal" data-lang="ru">Посмотрите <em>как у нас</em></div>
+  <div class="sh2 reveal" data-lang="en">See what <em>we're like</em></div>
+  <div class="ssub reveal" data-lang="ru">Яркая среда, в которой дети хотят учиться</div>
+  <div class="ssub reveal" data-lang="en">A vibrant environment where children love to learn</div>
+  <div class="gal-grid reveal">
+    <div class="gal-item"><div class="gal-ph"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="6" width="28" height="22" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="10" r="2" fill="currentColor" opacity=".5"/></svg>
+      <span data-lang="ru">Занятия</span><span data-lang="en">Classes</span></div></div>
+    <div class="gal-item"><div class="gal-ph"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="19" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="13" r="5" stroke="currentColor" stroke-width="1.5"/></svg>
+      <span data-lang="ru">Бассейн</span><span data-lang="en">Pool</span></div></div>
+    <div class="gal-item"><div class="gal-ph"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="19" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="13" r="5" stroke="currentColor" stroke-width="1.5"/></svg>
+      <span data-lang="ru">Праздники</span><span data-lang="en">Celebrations</span></div></div>
+    <div class="gal-item"><div class="gal-ph"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="19" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="13" r="5" stroke="currentColor" stroke-width="1.5"/></svg>
+      <span data-lang="ru">Интерьер</span><span data-lang="en">Interior</span></div></div>
+    <div class="gal-item"><div class="gal-ph"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="19" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="13" r="5" stroke="currentColor" stroke-width="1.5"/></svg>
+      <span data-lang="ru">Прогулки</span><span data-lang="en">Outdoors</span></div></div>
+    <div class="gal-item gal-menu-item"><div class="gal-ph" style="background:#FFE4CC;color:#9A4A00;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="19" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="13" r="5" stroke="currentColor" stroke-width="1.5"/></svg>
+      <span data-lang="ru">Меню</span><span data-lang="en">Menu</span></div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec sec-white" id="pricing">
+  <div class="tag reveal" data-lang="ru">Стоимость</div>
+  <div class="tag reveal" data-lang="en">Pricing</div>
+  <div class="sh2 reveal" data-lang="ru"><em>Прозрачные</em> цены</div>
+  <div class="sh2 reveal" data-lang="en"><em>Transparent</em> pricing</div>
+  <div class="ssub reveal" data-lang="ru">Чем дольше — тем выгоднее. Включены питание, бассейн и все занятия.</div>
+  <div class="ssub reveal" data-lang="en">The longer the commitment, the better the value. Meals, pool, and all activities included.</div>
+
+  <div class="calc-wrap reveal">
+    <div class="calc-grid">
+      <button class="calc-btn" onclick="selectPlan(this,9000,'week')">
+        <span class="calc-label" data-lang="ru">1 неделя</span><span class="calc-label" data-lang="en">1 week</span>
+        <span class="calc-price">9 000 ฿</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,13500,'month')">
+        <span class="calc-label">Half-day</span>
+        <span class="calc-price">13 500 ฿</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,23500,'month')">
+        <span class="calc-label" data-lang="ru">1 месяц</span><span class="calc-label" data-lang="en">1 month</span>
+        <span class="calc-price">23 500 ฿</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,22500,'month')">
+        <span class="calc-badge">−4%</span>
+        <span class="calc-label" data-lang="ru">3 месяца</span><span class="calc-label" data-lang="en">3 months</span>
+        <span class="calc-price">22 500 ฿</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,20500,'month')">
+        <span class="calc-badge">−13%</span>
+        <span class="calc-label" data-lang="ru">6 месяцев</span><span class="calc-label" data-lang="en">6 months</span>
+        <span class="calc-price">20 500 ฿</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,20000,'month')">
+        <span class="calc-badge">−15%</span>
+        <span class="calc-label" data-lang="ru">1 год (ежемес.)</span><span class="calc-label" data-lang="en">1 year (monthly)</span>
+        <span class="calc-price">20 000 ฿</span>
+      </button>
+      <button class="calc-btn" onclick="selectPlan(this,19500,'month')">
+        <span class="calc-badge">−17%</span>
+        <span class="calc-label" data-lang="ru">1 год (2 платежа)</span><span class="calc-label" data-lang="en">1 year (2 payments)</span>
+        <span class="calc-price">19 500 ฿</span>
+      </button>
+      <button class="calc-btn calc-best" onclick="selectPlan(this,18500,'month')">
+        <span class="calc-badge best">🔥 −21%</span>
+        <span class="calc-label" data-lang="ru">1 год (1 платёж)</span><span class="calc-label" data-lang="en">1 year (full pay)</span>
+        <span class="calc-price">18 500 ฿</span>
+      </button>
+    </div>
+    <div class="calc-result" id="calc-result">
+      <div class="calc-result-text" data-lang="ru">Выберите период выше</div>
+      <div class="calc-result-text" data-lang="en">Select a plan above</div>
+    </div>
+    <div class="price-note" data-lang="ru">💡 Пробный день — бесплатно. В стоимость включены завтрак, обед, полдник, бассейн и все занятия.</div>
+    <div class="price-note" data-lang="en">💡 Trial day is free. Price includes breakfast, lunch, afternoon snack, pool and all activities.</div>
+    <div class="price-cta">
+      <a href="#apply" class="btn-blue" style="flex:1;justify-content:center;" data-lang="ru">Записаться</a>
+      <a href="#apply" class="btn-blue" style="flex:1;justify-content:center;" data-lang="en">Enrol Now</a>
+      <a href="https://wa.me/66635067812" target="_blank" class="btn-green" style="flex:1;justify-content:center;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.062.522 4.004 1.442 5.7L.055 23.455a.5.5 0 0 0 .611.601l5.861-1.372A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 0 1-5.022-1.379l-.36-.214-3.733.874.898-3.645-.235-.374A9.782 9.782 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+  <script>
+  function selectPlan(btn,price,per){
+    document.querySelectorAll('.calc-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    var lang=document.documentElement.getAttribute('data-lang')||'ru';
+    var lbl=per==='month'?(lang==='ru'?'мес.':'mo.'):(lang==='ru'?'нед.':'wk.');
+    document.getElementById('calc-result').innerHTML='<div class="calc-result-price">'+price.toLocaleString('ru')+' ฿<span class="calc-result-sub"> / '+lbl+'</span></div>';
+  }
+  </script>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec sec-alt" id="reviews">
+  <div class="tag reveal" data-lang="ru">Отзывы</div>
+  <div class="tag reveal" data-lang="en">Reviews</div>
+  <div class="sh2 reveal" data-lang="ru">Родители <em>доверяют нам</em></div>
+  <div class="sh2 reveal" data-lang="en">Parents <em>trust us</em></div>
+  <div class="rev-grid reveal">
+    <div class="rev-card"><div class="rev-stars">★★★★★</div>
+      <div class="rev-text" data-lang="ru">«Самый лучший садик на острове! Таких отзывчивых воспитателей мы ни разу не видели. Каждый раз приходим как на праздник. Отдельный подход к каждому ребёнку.»</div>
+      <div class="rev-text" data-lang="en">"The best kindergarten on the island! We've never seen such caring teachers. Every day feels like a celebration. Individual attention for every child."</div>
+      <div class="rev-author"><div class="rev-av" style="background:#4BAEE8;">ЮВ</div><div>
+        <div class="rev-name" data-lang="ru">Юлия Воробьёва</div><div class="rev-name" data-lang="en">Julia Vorobyova</div>
+        <div class="rev-sub" data-lang="ru">мама Мии, 4 года</div><div class="rev-sub" data-lang="en">Mia's mum, age 4</div>
+      </div></div>
+    </div>
+    <div class="rev-card"><div class="rev-stars">★★★★★</div>
+      <div class="rev-text" data-lang="ru">«Это 4-й сад по счёту. Dreamax — идеальный. Ребёнок ждёт с выходных понедельника. Русская и английская программа, бассейн, йога, тайская культура — всё в одном месте.»</div>
+      <div class="rev-text" data-lang="en">"This is our 4th kindergarten. Dreamax is perfect. My child looks forward to Monday all weekend. Russian and English programmes, pool, yoga, Thai culture — all in one place."</div>
+      <div class="rev-author"><div class="rev-av" style="background:#F9C855;color:#854F0B;">ОМ</div><div>
+        <div class="rev-name" data-lang="ru">Ольга Мустейкис</div><div class="rev-name" data-lang="en">Olga Musteikis</div>
+        <div class="rev-sub" data-lang="ru">мама Тимура, 5 лет</div><div class="rev-sub" data-lang="en">Timur's mum, age 5</div>
+      </div></div>
+    </div>
+    <div class="rev-card"><div class="rev-stars">★★★★★</div>
+      <div class="rev-text" data-lang="ru">«Меню русско-европейское — дети едят привычную еду, а не сладкий рис с манго. Педагогический состав — отдельное восхищение. Иван — просто обожаем детьми.»</div>
+      <div class="rev-text" data-lang="en">"The menu is Russian-European — familiar food for children, not sweet rice with mango. The teaching staff are truly impressive. Ivan is simply adored by all the kids."</div>
+      <div class="rev-author"><div class="rev-av" style="background:#9B87D8;">ЛВ</div><div>
+        <div class="rev-name" data-lang="ru">Людмила Виноградова</div><div class="rev-name" data-lang="en">Lyudmila Vinogradova</div>
+        <div class="rev-sub" data-lang="ru">мама Дани и Ани</div><div class="rev-sub" data-lang="en">Danya &amp; Anya's mum</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="sec sec-white" id="apply">
+  <div class="tag reveal" data-lang="ru">Поступление</div>
+  <div class="tag reveal" data-lang="en">Enrolment</div>
+  <div class="sh2 reveal" data-lang="ru">Как <em>записать ребёнка</em></div>
+  <div class="sh2 reveal" data-lang="en">How to <em>enrol your child</em></div>
+  <div class="ssub reveal" data-lang="ru">Три простых шага — и ваш ребёнок уже в Dreamax</div>
+  <div class="ssub reveal" data-lang="en">Three simple steps — and your child is at Dreamax</div>
+  <div class="apply-grid reveal">
+    <div class="apply-step"><div class="step-circle">✍️</div><div>
+      <div class="step-title" data-lang="ru">Оставьте заявку</div><div class="step-title" data-lang="en">Send an enquiry</div>
+      <div class="step-desc" data-lang="ru">Напишите в WhatsApp или нажмите кнопку. Ответим в течение часа в рабочее время.</div>
+      <div class="step-desc" data-lang="en">Message us on WhatsApp or click the button. We reply within an hour during working hours.</div>
+    </div></div>
+    <div class="apply-step"><div class="step-circle">🏫</div><div>
+      <div class="step-title" data-lang="ru">Придите на экскурсию</div><div class="step-title" data-lang="en">Come for a tour</div>
+      <div class="step-desc" data-lang="ru">Покажем сад, познакомим с педагогами. Ребёнок может провести пробный день бесплатно.</div>
+      <div class="step-desc" data-lang="en">We'll show you around and introduce the teachers. Your child can enjoy a free trial day.</div>
+    </div></div>
+    <div class="apply-step"><div class="step-circle">🎉</div><div>
+      <div class="step-title" data-lang="ru">Подпишем договор</div><div class="step-title" data-lang="en">Sign the agreement</div>
+      <div class="step-desc" data-lang="ru">Оформим документы и определим дату начала. Всё быстро и без лишней бюрократии.</div>
+      <div class="step-desc" data-lang="en">We handle the paperwork and agree on a start date. Quick, simple, no unnecessary red tape.</div>
+    </div></div>
+  </div>
+  <div class="contact-box reveal">
+    <div>
+      <h4 data-lang="ru">Остались вопросы?</h4><h4 data-lang="en">Have questions?</h4>
+      <p data-lang="ru">Напишите нам — ответим быстро и честно</p>
+      <p data-lang="en">Write to us — we'll reply quickly and honestly</p>
+    </div>
+    <div class="contact-btns">
+      <a href="https://wa.me/66635067812" target="_blank" class="btn-green">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.062.522 4.004 1.442 5.7L.055 23.455a.5.5 0 0 0 .611.601l5.861-1.372A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 0 1-5.022-1.379l-.36-.214-3.733.874.898-3.645-.235-.374A9.782 9.782 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        +66 635 067 812
+      </a>
+      <a href="mailto:dreamaxcamp@gmail.com" class="btn-email">✉️ dreamaxcamp@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-bg" id="faq">
+  <div class="tag reveal" data-lang="ru">FAQ</div>
+  <div class="tag reveal" data-lang="en">FAQ</div>
+  <div class="sh2 reveal" style="text-align:center;" data-lang="ru">Отвечаем <em>честно</em></div>
+  <div class="sh2 reveal" style="text-align:center;" data-lang="en">Honest <em>answers</em></div>
+  <div class="faq-list reveal">
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">С какого возраста принимаете детей?</span><span data-lang="en">What is the minimum age for enrolment?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Принимаем детей от 2,5 до 6 лет. Если ребёнку уже 6 лет, мы проводим диагностику и можем направить в первый класс вместо садика — решение принимается совместно с родителями.</div>
+      <div class="faq-a-in" data-lang="en">We accept children from 2.5 to 6 years old. If a child is already 6, we run an assessment and may recommend Year 1 instead — this decision is always made together with the parents.</div>
+    </div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">Какое время работы?</span><span data-lang="en">What are your opening hours?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Основное время — с 09:00 до 17:00, понедельник–пятница. Ранний приём и поздний уход — по договорённости с администратором.</div>
+      <div class="faq-a-in" data-lang="en">Core hours are 09:00–17:00, Monday to Friday. Early drop-off and late pick-up can be arranged with our administrator.</div>
+    </div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">Какое питание в саду?</span><span data-lang="en">What food is served?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Собственная кухня с русским поваром. Меню русско-европейское — привычная для детей еда: никакого острого и экзотического. Завтрак, обед и полдник включены в стоимость полного дня.</div>
+      <div class="faq-a-in" data-lang="en">We have our own kitchen with a Russian chef. The menu is Russian-European — familiar food for children: nothing spicy or exotic. Breakfast, lunch and afternoon snack are included in the full-day price.</div>
+    </div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">Ребёнок не говорит по-английски — это проблема?</span><span data-lang="en">My child doesn't speak English — is that a problem?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Нет. Дети не "учат" английский как предмет — они живут в двуязычной среде. Педагоги из UK общаются через игру и повседневные ситуации. Большинство детей начинают говорить уже через 2–3 месяца.</div>
+      <div class="faq-a-in" data-lang="en">Not at all. Children don't "study" English as a subject — they live in a bilingual environment. UK teachers communicate through play and everyday situations. Most children start speaking within 2–3 months.</div>
+    </div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">Есть ли пробный день?</span><span data-lang="en">Is there a trial day?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Да — после экскурсии приглашаем на бесплатный пробный день. Ребёнок проводит полное время вместе с группой, вы убеждаетесь что ему комфортно. Запись через WhatsApp.</div>
+      <div class="faq-a-in" data-lang="en">Yes — after the tour we invite you for a free trial day. Your child spends a full day with the group so you can see they're comfortable. Book via WhatsApp.</div>
+    </div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">
+      <span data-lang="ru">Как обеспечивается безопасность?</span><span data-lang="en">How is safety ensured?</span>
+      <div class="faq-arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+    </button><div class="faq-a">
+      <div class="faq-a-in" data-lang="ru">Доступ на территорию только для зарегистрированных родителей и проверенного персонала. Территория огорожена, постоянное наблюдение педагогов. Видеонаблюдение на площадке.</div>
+      <div class="faq-a-in" data-lang="en">Access is restricted to registered parents and verified staff. The grounds are enclosed with constant teacher supervision and CCTV monitoring throughout.</div>
+    </div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-text">
+    <h2 data-lang="ru">Запишите ребёнка прямо сейчас</h2>
+    <h2 data-lang="en">Enrol your child today</h2>
+    <p data-lang="ru">Места ограничены · Пробный день бесплатно · Ответим в течение часа</p>
+    <p data-lang="en">Places are limited · Free trial day · We reply within an hour</p>
+  </div>
+  <div class="cta-btns">
+    <a href="https://wa.me/66635067812" target="_blank" class="btn-cta-wa">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.062.522 4.004 1.442 5.7L.055 23.455a.5.5 0 0 0 .611.601l5.861-1.372A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 0 1-5.022-1.379l-.36-.214-3.733.874.898-3.645-.235-.374A9.782 9.782 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      +66 635 067 812
+    </a>
+    <a href="#apply" class="btn-cta-y" data-lang="ru">Записать ребёнка</a>
+    <a href="#apply" class="btn-cta-y" data-lang="en">Enrol Your Child</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="ft-logo">
+      <div class="ft-logo-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" fill="white" opacity=".2"/><circle cx="10" cy="10" r="4" fill="white"/><circle cx="10" cy="4.5" r="1.8" fill="white" opacity=".6"/></svg></div>
+      <span class="ft-logo-name">Dreamax Kindergarten</span>
+    </div>
+    <div class="ft-tag" data-lang="ru">Международный билингвальный детский сад<br>на Пхукете с 2015 года<br>Лицензия Л035-01211-24/00651032</div>
+    <div class="ft-tag" data-lang="en">International bilingual kindergarten<br>in Phuket since 2015<br>Licence Л035-01211-24/00651032</div>
+  </div>
+  <div class="ft-links">
+    <a href="#programs" data-lang="ru">Программа</a>
+    <a href="#programs" data-lang="en">Programme</a>
+    <a href="#schedule" data-lang="ru">Расписание</a>
+    <a href="#schedule" data-lang="en">Schedule</a>
+    <a href="#pricing" data-lang="ru">Цены</a>
+    <a href="#pricing" data-lang="en">Pricing</a>
+    <a href="#reviews" data-lang="ru">Отзывы</a>
+    <a href="#reviews" data-lang="en">Reviews</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="ft-info">
+    <p data-lang="ru">Таиланд, Пхукет, Чалонг<br>Chaofah Road, 10/12, 83130<br>ПН–ПТ, 09:00 – 17:00<br>dreamaxcamp@gmail.com<br>+66 635 067 812</p>
+    <p data-lang="en">Thailand, Phuket, Chalong<br>Chaofah Road, 10/12, 83130<br>Mon–Fri, 09:00 – 17:00<br>dreamaxcamp@gmail.com<br>+66 635 067 812</p>
+    <div class="ft-copy">© 2025 Dreamax Kindergarten</div>
+  </div>
+</footer>
+
+<script>
+// ── Language system ──────────────────────────────────────────────────
+function setLang(lang){
+  document.documentElement.setAttribute('lang',lang);
+  // desktop buttons
+  document.getElementById('d-ru').classList.toggle('active',lang==='ru');
+  document.getElementById('d-en').classList.toggle('active',lang==='en');
+  // mobile buttons
+  document.getElementById('m-ru').classList.toggle('active',lang==='ru');
+  document.getElementById('m-en').classList.toggle('active',lang==='en');
+  // title
+  document.getElementById('page-title').textContent=lang==='ru'
+    ?'Dreamax Kindergarten — Международный детский сад, Пхукет'
+    :'Dreamax Kindergarten — International Bilingual Kindergarten, Phuket';
+}
+// init — default RU (html[lang="ru"] already set in <html> tag)
+setLang('ru');
+
+// ── Burger ──────────────────────────────────────────────────────────
+document.getElementById('burger').addEventListener('click',function(){
+  document.getElementById('mobile-menu').classList.toggle('open');
+});
+function closeMob(){document.getElementById('mobile-menu').classList.remove('open');}
+
+// ── Schedule tabs ───────────────────────────────────────────────────
+function switchTab(btn,group){
+  document.querySelectorAll('.sched-tab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.sched-panel').forEach(function(p){p.classList.remove('active');p.style.display='none';});
+  btn.classList.add('active');
+  var panel=document.getElementById('panel-'+group);
+  panel.classList.add('active');panel.style.display='';
+}
+
+// ── FAQ ─────────────────────────────────────────────────────────────
+function toggleFaq(btn){
+  var item=btn.closest('.faq-item');
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){
+    i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a').scrollHeight+'px';
+  }
+}
+
+// ── Reveal ──────────────────────────────────────────────────────────
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(function(r){obs.observe(r);});
+</script>
+</body>
+</html>
